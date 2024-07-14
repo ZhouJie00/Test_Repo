@@ -64,6 +64,7 @@
                                         </div>
                                         <div class="header-info-right">
                                             <ul>
+                                                <li><a href="/history">Purchase History</a></li>
                                                 <li><a href="/settings">My Account</a></li>
                                                 <!--
                                                 <li><a href="product_list.html">Wish List</a></li>

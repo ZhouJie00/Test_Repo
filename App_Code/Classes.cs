@@ -998,4 +998,28 @@ public class Function {
             com.ExecuteNonQuery();
         }
     }
+    public static DataTable GetOrderHistory(string account_id)
+    {
+        DataTable dt = new DataTable();
+
+        using (SqlConnection sqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["Database"].ConnectionString))
+        {
+            sqlConnection.Open();
+            SqlDataAdapter sda = new SqlDataAdapter($"SELECT * FROM ORDERS WHERE account_id = '{account_id}'", sqlConnection);
+            sda.Fill(dt);
+            return dt;
+        }
+    }
+    public static DataTable GetPurchaseHistory(string order_id)
+    {
+        DataTable dt = new DataTable();
+
+        using (SqlConnection sqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["Database"].ConnectionString))
+        {
+            sqlConnection.Open();
+            SqlDataAdapter sda = new SqlDataAdapter($"SELECT * FROM Purchase WHERE order_id = '{order_id}'", sqlConnection);
+            sda.Fill(dt);
+            return dt;
+        }
+    }
 }

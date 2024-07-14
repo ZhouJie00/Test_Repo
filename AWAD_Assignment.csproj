@@ -892,6 +892,7 @@
     <Content Include="routes\product_list_men.aspx" />
     <Content Include="routes\product_list_women.aspx" />
     <Content Include="routes\change_password.aspx" />
+    <Content Include="routes\purchase_history.aspx" />
     <Content Include="routes\register.aspx" />
     <Content Include="routes\search.aspx" />
     <Content Include="routes\settings.aspx" />
@@ -1035,6 +1036,13 @@
     </Compile>
     <Compile Include="routes\change_password.aspx.designer.cs">
       <DependentUpon>change_password.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="routes\purchase_history.aspx.cs">
+      <DependentUpon>purchase_history.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="routes\purchase_history.aspx.designer.cs">
+      <DependentUpon>purchase_history.aspx</DependentUpon>
     </Compile>
     <Compile Include="routes\register.aspx.cs">
       <DependentUpon>register.aspx</DependentUpon>
