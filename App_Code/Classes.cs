@@ -18,6 +18,8 @@ using Stripe;
 using AjaxControlToolkit;
 using System.Net;
 using System.Net.Mail;
+using AjaxControlToolkit.HtmlEditor.ToolbarButtons;
+using OtpNet;
 
 /// <summary>
 /// Summary description for Clothes
@@ -966,5 +968,34 @@ public class Function {
         mail.Body = body;
 
         smtpclient.Send(mail);
+    }
+
+    // Order & Purchase History
+    public static void CreateOrderHistory(string id, decimal total, DateTime date_purchased, string account_id) {
+        using (SqlConnection sqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["Database"].ConnectionString))
+        {
+            sqlConnection.Open();
+            string query = "INSERT INTO Orders (Id, total, date_purchased, account_id) values (@id, @total, @date_purchased, @account_id)";
+            SqlCommand com = new SqlCommand(query, sqlConnection);
+            com.Parameters.AddWithValue("@id", id);
+            com.Parameters.AddWithValue("@total", total);
+            com.Parameters.AddWithValue("@date_purchased", date_purchased);
+            com.Parameters.AddWithValue("@account_id", account_id);
+            com.ExecuteNonQuery();
+        }
+    }
+    public static void CreatePurchaseHistory(int quantity, string clothing_id, string order_id)
+    {
+        using (SqlConnection sqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["Database"].ConnectionString))
+        {
+            sqlConnection.Open();
+            string query = "INSERT INTO Purchase (Id, quantity, clothing_id, order_id) values (@id, @quantity, @clothing_id, @order_id)";
+            SqlCommand com = new SqlCommand(query, sqlConnection);
+            com.Parameters.AddWithValue("@id", Guid.NewGuid().ToString());
+            com.Parameters.AddWithValue("@quantity", quantity);
+            com.Parameters.AddWithValue("@clothing_id", clothing_id);
+            com.Parameters.AddWithValue("@order_id", order_id);
+            com.ExecuteNonQuery();
+        }
     }
 }

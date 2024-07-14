@@ -16,9 +16,9 @@ namespace AWAD_Assignment.routes
         
         protected void Page_Load(object sender, EventArgs e)
         {
-            Random rand = new Random();
             DateTime dt = DateTime.Now;
-            Label_OrderNumber.Text = rand.Next(1000, 9999).ToString();
+            string orderNumber = Guid.NewGuid().ToString();
+            Label_OrderNumber.Text = orderNumber.Substring(0, 12);
             Label_Date.Text = dt.ToString("MMM dd, yyyy");
 
             string[] shippAddr = (string[])Session["shipping"];
@@ -34,6 +34,17 @@ namespace AWAD_Assignment.routes
 
             Repeater1.DataSource = dataset;
             Repeater1.DataBind();
+
+
+            // Add Order & Purchase to history
+            Function.CreateOrderHistory(orderNumber, decimal.Parse(Label_total.Text.Substring(5)), dt, Account.GetAccount(Session["email"].ToString()).id);
+
+            Dictionary<string, Cart> carts = (Dictionary<string, Cart>)Session["cart"];
+            foreach (KeyValuePair<string, Cart> kvp in carts)
+            {
+                Function.CreatePurchaseHistory(kvp.Value.item_quantity, kvp.Value.clothes_id, orderNumber);
+            }
+
 
             // Clear shopping cart & shipping session 
             //Session.Remove("shipping");

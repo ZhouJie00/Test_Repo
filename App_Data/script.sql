@@ -63,6 +63,25 @@ CREATE TABLE [dbo].[Sales] (
     PRIMARY KEY CLUSTERED ([Id] ASC)
 );
 
+CREATE TABLE [dbo].[Orders] (
+    [Id]             CHAR (36) NOT NULL,
+    [total]          MONEY     NOT NULL,
+    [date_purchased] DATE      NOT NULL,
+    [account_id]     CHAR (36) NOT NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC),
+    CONSTRAINT [FK_Order_Accounts] FOREIGN KEY ([account_id]) REFERENCES [dbo].[Accounts] ([Id])
+);
+
+CREATE TABLE [dbo].[Purchase] (
+    [Id]          CHAR (36) NOT NULL,
+    [quantity]    INT       NOT NULL,
+    [clothing_id] CHAR (36) NOT NULL,
+    [order_id]    CHAR (36) NOT NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC),
+	CONSTRAINT [FK_Order_Clothes] FOREIGN KEY ([clothing_id]) REFERENCES [dbo].[Clothes] ([Id]),
+    CONSTRAINT [FK_Purchase_Order] FOREIGN KEY ([order_id]) REFERENCES [dbo].[Orders] ([Id])
+);
+
 
 -- Create Admin account
 INSERT INTO accounts (Id, first_name, last_name, email, emailConfirmed, isAdmin, password, mobile_number, multi_factor_enabled, secret_key, address1, address2, zipcode)
