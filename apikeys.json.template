@@ -1,0 +1,8 @@
+{
+  "stripe_api_key": "YOUR_STRIPE_API_KEY",
+  "google_public": "YOUR_GOOGLE_PUBLIC_KEY",
+  "google_secret": "YOUR_GOOGLE_SECRET_KEY",
+  "sendgrid_api_key": "YOUR_SENDGRID_API_KEY",
+  "sendgrid_email": "YOUR_SENDGRID_EMAIL",
+  "ipify": "YOUR_IPIFY_API_KEY"
+}

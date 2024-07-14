@@ -1,0 +1,1217 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D796802B-E627-4C49-88E5-7F83AF194E3B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AWAD_Assignment</RootNamespace>
+    <AssemblyName>AWAD_Assignment</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=20.1.0.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <HintPath>packages\AjaxControlToolkit.20.1.0\lib\net40\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.6.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=3.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Nemiro.OAuth, Version=1.13.0.2828, Culture=neutral, PublicKeyToken=cb06320e362d440b, processorArchitecture=MSIL">
+      <HintPath>packages\Nemiro.OAuth.1.13.0\lib\net47\Nemiro.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Otp.NET, Version=1.2.2.0, Culture=neutral, PublicKeyToken=38a48df817e173a6, processorArchitecture=MSIL">
+      <HintPath>packages\Otp.NET.1.2.2\lib\net45\Otp.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="QRCoder, Version=1.4.3.0, Culture=neutral, PublicKeyToken=c4ed5b9ae8358a28, processorArchitecture=MSIL">
+      <HintPath>packages\QRCoder.1.4.3\lib\net40\QRCoder.dll</HintPath>
+    </Reference>
+    <Reference Include="SendGrid, Version=9.25.3.0, Culture=neutral, PublicKeyToken=4f047e93159395ca, processorArchitecture=MSIL">
+      <HintPath>packages\SendGrid.9.25.3\lib\net452\SendGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="StarkbankEcdsa, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b2e6337a5d77bfbc, processorArchitecture=MSIL">
+      <HintPath>packages\starkbank-ecdsa.1.3.3\lib\net452\StarkbankEcdsa.dll</HintPath>
+    </Reference>
+    <Reference Include="Stripe.net, Version=39.90.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Stripe.net.39.90.0\lib\net461\Stripe.net.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".gitignore" />
+    <Content Include="App_Data\Database1.mdf" />
+    <Content Include="App_Data\Database1_log.ldf">
+      <DependentUpon>Database1.mdf</DependentUpon>
+    </Content>
+    <Content Include="App_Data\script.sql" />
+    <Content Include="App_Data\storedprocedure.sql" />
+    <Content Include="assets\css\all.css" />
+    <Content Include="assets\css\animate.min.css" />
+    <Content Include="assets\css\aos.css" />
+    <Content Include="assets\css\bootstrap.min.css" />
+    <Content Include="assets\css\flaticon.css" />
+    <Content Include="assets\css\fontawesome-all.min.css" />
+    <Content Include="assets\css\lightslider.min.css" />
+    <Content Include="assets\css\magnific-popup.css" />
+    <Content Include="assets\css\nice-select.css" />
+    <Content Include="assets\css\owl.carousel.min.css" />
+    <Content Include="assets\css\price_rangs.css" />
+    <Content Include="assets\css\slick-theme.min.css" />
+    <Content Include="assets\css\slick.css" />
+    <Content Include="assets\css\slick.min.css" />
+    <Content Include="assets\css\slicknav.css" />
+    <Content Include="assets\css\style.css" />
+    <Content Include="assets\css\swiper.min.css" />
+    <Content Include="assets\css\themify-icons.css" />
+    <Content Include="assets\fonts\fa-brands-400.svg" />
+    <Content Include="assets\fonts\fa-regular-400.svg" />
+    <Content Include="assets\fonts\fa-solid-900.svg" />
+    <Content Include="assets\fonts\flaticon.html" />
+    <Content Include="assets\fonts\Flaticon.svg" />
+    <Content Include="assets\fonts\themify.svg" />
+    <Content Include="assets\img\about\about_lft.png" />
+    <Content Include="assets\img\about\about_right.png" />
+    <Content Include="assets\img\about\pet_care.png" />
+    <Content Include="assets\img\about_img_1.png" />
+    <Content Include="assets\img\about_img_2.png" />
+    <Content Include="assets\img\about_us_video.png" />
+    <Content Include="assets\img\adapt_icon\1.png" />
+    <Content Include="assets\img\adapt_icon\1.svg" />
+    <Content Include="assets\img\adapt_icon\2.png" />
+    <Content Include="assets\img\adapt_icon\3.png" />
+    <Content Include="assets\img\arrivel\arrivel_1.png" />
+    <Content Include="assets\img\arrivel\arrivel_2.png" />
+    <Content Include="assets\img\arrivel\arrivel_3.png" />
+    <Content Include="assets\img\arrivel\arrivel_4.png" />
+    <Content Include="assets\img\arrivel\arrivel_5.png" />
+    <Content Include="assets\img\arrivel\arrivel_6.png" />
+    <Content Include="assets\img\author\author_1.png" />
+    <Content Include="assets\img\author\author_2.png" />
+    <Content Include="assets\img\author\author_3.png" />
+    <Content Include="assets\img\b1.jpg" />
+    <Content Include="assets\img\b2.jpg" />
+    <Content Include="assets\img\b3.jpg" />
+    <Content Include="assets\img\banner.png" />
+    <Content Include="assets\img\banner\banner.png" />
+    <Content Include="assets\img\banner\contact_bg.png" />
+    <Content Include="assets\img\banner\dog.png" />
+    <Content Include="assets\img\banner\img.png" />
+    <Content Include="assets\img\banner_img.png" />
+    <Content Include="assets\img\banner_pattern.png" />
+    <Content Include="assets\img\banner_shape.png" />
+    <Content Include="assets\img\categori\card-man.png" />
+    <Content Include="assets\img\categori\card-shape.png" />
+    <Content Include="assets\img\categori\card.png" />
+    <Content Include="assets\img\categori\cat1.jpg" />
+    <Content Include="assets\img\categori\cat2.jpg" />
+    <Content Include="assets\img\categori\cat3.jpg" />
+    <Content Include="assets\img\categori\category_1.png" />
+    <Content Include="assets\img\categori\category_10.png" />
+    <Content Include="assets\img\categori\category_11.png" />
+    <Content Include="assets\img\categori\category_12.png" />
+    <Content Include="assets\img\categori\category_2.png" />
+    <Content Include="assets\img\categori\category_3.png" />
+    <Content Include="assets\img\categori\category_4.png" />
+    <Content Include="assets\img\categori\category_5.png" />
+    <Content Include="assets\img\categori\category_6.png" />
+    <Content Include="assets\img\categori\category_7.png" />
+    <Content Include="assets\img\categori\category_8.png" />
+    <Content Include="assets\img\categori\category_9.png" />
+    <Content Include="assets\img\categori\product1.png" />
+    <Content Include="assets\img\categori\product2.png" />
+    <Content Include="assets\img\categori\product3.png" />
+    <Content Include="assets\img\categori\product4.png" />
+    <Content Include="assets\img\categori\product5.png" />
+    <Content Include="assets\img\categori\product6.png" />
+    <Content Include="assets\img\client.png" />
+    <Content Include="assets\img\client_1.png" />
+    <Content Include="assets\img\client_2.png" />
+    <Content Include="assets\img\collection\collection1.png" />
+    <Content Include="assets\img\collection\collection2.png" />
+    <Content Include="assets\img\collection\collection3.png" />
+    <Content Include="assets\img\collection\collection4.png" />
+    <Content Include="assets\img\collection\collection5.png" />
+    <Content Include="assets\img\collection\latest-man.png" />
+    <Content Include="assets\img\collection\latest-offer.png" />
+    <Content Include="assets\img\comment\comment_1.png" />
+    <Content Include="assets\img\comment\comment_2.png" />
+    <Content Include="assets\img\comment\comment_3.png" />
+    <Content Include="assets\img\elements\a.jpg" />
+    <Content Include="assets\img\elements\a2.jpg" />
+    <Content Include="assets\img\elements\d.jpg" />
+    <Content Include="assets\img\elements\disabled-check.png" />
+    <Content Include="assets\img\elements\disabled-radio.png" />
+    <Content Include="assets\img\elements\f1.jpg" />
+    <Content Include="assets\img\elements\f2.jpg" />
+    <Content Include="assets\img\elements\f3.jpg" />
+    <Content Include="assets\img\elements\f4.jpg" />
+    <Content Include="assets\img\elements\f5.jpg" />
+    <Content Include="assets\img\elements\f6.jpg" />
+    <Content Include="assets\img\elements\f7.jpg" />
+    <Content Include="assets\img\elements\f8.jpg" />
+    <Content Include="assets\img\elements\g1.jpg" />
+    <Content Include="assets\img\elements\g2.jpg" />
+    <Content Include="assets\img\elements\g3.jpg" />
+    <Content Include="assets\img\elements\g4.jpg" />
+    <Content Include="assets\img\elements\g5.jpg" />
+    <Content Include="assets\img\elements\g6.jpg" />
+    <Content Include="assets\img\elements\g7.jpg" />
+    <Content Include="assets\img\elements\g8.jpg" />
+    <Content Include="assets\img\elements\primary-check.png" />
+    <Content Include="assets\img\elements\primary-radio.png" />
+    <Content Include="assets\img\elements\success-check.png" />
+    <Content Include="assets\img\elements\success-radio.png" />
+    <Content Include="assets\img\elements\user1.png" />
+    <Content Include="assets\img\elements\user2.png" />
+    <Content Include="assets\img\favicon.ico" />
+    <Content Include="assets\img\favicon.png" />
+    <Content Include="assets\img\feature_1.png" />
+    <Content Include="assets\img\feature_2.png" />
+    <Content Include="assets\img\feature_3.png" />
+    <Content Include="assets\img\gallery\1.png" />
+    <Content Include="assets\img\gallery\2.png" />
+    <Content Include="assets\img\gallery\3.png" />
+    <Content Include="assets\img\gallery\gallery1.jpg" />
+    <Content Include="assets\img\gallery\gallery2.jpg" />
+    <Content Include="assets\img\gallery\gallery3.jpg" />
+    <Content Include="assets\img\gallery\gallery4.jpg" />
+    <Content Include="assets\img\gallery\gallery5.jpg" />
+    <Content Include="assets\img\hero\about_hero.jpg" />
+    <Content Include="assets\img\hero\category.jpg" />
+    <Content Include="assets\img\hero\contact_hero.jpg" />
+    <Content Include="assets\img\hero\gallery_hero.jpg" />
+    <Content Include="assets\img\hero\h1_hero.jpg" />
+    <Content Include="assets\img\hero\hero_man.png" />
+    <Content Include="assets\img\hero\Industries_hero.jpg" />
+    <Content Include="assets\img\hero\services_hero.jpg" />
+    <Content Include="assets\img\icon\arrow-left.png" />
+    <Content Include="assets\img\icon\arrow-right.png" />
+    <Content Include="assets\img\icon\color_star.svg" />
+    <Content Include="assets\img\icon\feature_icon_1.png" />
+    <Content Include="assets\img\icon\feature_icon_1.svg" />
+    <Content Include="assets\img\icon\feature_icon_2.png" />
+    <Content Include="assets\img\icon\feature_icon_2.svg" />
+    <Content Include="assets\img\icon\feature_icon_3.png" />
+    <Content Include="assets\img\icon\feature_icon_3.svg" />
+    <Content Include="assets\img\icon\feature_icon_4.svg" />
+    <Content Include="assets\img\icon\header_icon.png" />
+    <Content Include="assets\img\icon\header_icon_sg.png" />
+    <Content Include="assets\img\icon\icon_1.png" />
+    <Content Include="assets\img\icon\icon_2.png" />
+    <Content Include="assets\img\icon\icon_3.png" />
+    <Content Include="assets\img\icon\icon_4.png" />
+    <Content Include="assets\img\icon\left-white.png" />
+    <Content Include="assets\img\icon\left.svg" />
+    <Content Include="assets\img\icon\play.svg" />
+    <Content Include="assets\img\icon\quate.svg" />
+    <Content Include="assets\img\icon\right-arrow.svg" />
+    <Content Include="assets\img\icon\right-white.png" />
+    <Content Include="assets\img\icon\right.svg" />
+    <Content Include="assets\img\icon\star.svg" />
+    <Content Include="assets\img\login.jpg" />
+    <Content Include="assets\img\logo.png" />
+    <Content Include="assets\img\logo\date-picker-icon.png" />
+    <Content Include="assets\img\logo\form-iocn.jpg" />
+    <Content Include="assets\img\logo\logo.png" />
+    <Content Include="assets\img\logo\logo2_footer.png" />
+    <Content Include="assets\img\logo\select-items-icon.jpg" />
+    <Content Include="assets\img\logo\testimonial.png" />
+    <Content Include="assets\img\offer-bg.png" />
+    <Content Include="assets\img\offers\1.png" />
+    <Content Include="assets\img\offers\2.png" />
+    <Content Include="assets\img\offers\3.png" />
+    <Content Include="assets\img\product\product_list_1.png" />
+    <Content Include="assets\img\product\product_list_10.png" />
+    <Content Include="assets\img\product\product_list_2.png" />
+    <Content Include="assets\img\product\product_list_3.png" />
+    <Content Include="assets\img\product\product_list_4.png" />
+    <Content Include="assets\img\product\product_list_5.png" />
+    <Content Include="assets\img\product\product_list_6.png" />
+    <Content Include="assets\img\product\product_list_7.png" />
+    <Content Include="assets\img\product\product_list_8.png" />
+    <Content Include="assets\img\product\product_list_9.png" />
+    <Content Include="assets\img\product\single_product.png" />
+    <Content Include="assets\img\product_details\prodect_details_1.png" />
+    <Content Include="assets\img\product_details\prodect_details_2.png" />
+    <Content Include="assets\img\product_details\prodect_details_3.png" />
+    <Content Include="assets\img\product_details\prodect_details_4.png" />
+    <Content Include="assets\img\product_overlay.png" />
+    <Content Include="assets\img\service\1.png" />
+    <Content Include="assets\img\service\2.png" />
+    <Content Include="assets\img\service\3.png" />
+    <Content Include="assets\img\service\service_icon_1.png" />
+    <Content Include="assets\img\service\service_icon_2.png" />
+    <Content Include="assets\img\service\service_icon_3.png" />
+    <Content Include="assets\img\service\service_icon_bg_1.png" />
+    <Content Include="assets\img\single_product_1.png" />
+    <Content Include="assets\img\single_product_2.png" />
+    <Content Include="assets\img\single_product_3.png" />
+    <Content Include="assets\img\team\1.png" />
+    <Content Include="assets\img\team\2.png" />
+    <Content Include="assets\img\team\3.png" />
+    <Content Include="assets\img\testmonial\1.png" />
+    <Content Include="assets\img\testmonial\Homepage_testi.png" />
+    <Content Include="assets\img\time_line_1.png" />
+    <Content Include="assets\img\tranding_item\tranding_item_1.png" />
+    <Content Include="assets\img\tranding_item\tranding_item_2.png" />
+    <Content Include="assets\img\tranding_item\tranding_item_3.png" />
+    <Content Include="assets\img\tranding_item\tranding_item_4.png" />
+    <Content Include="assets\img\tranding_item\tranding_item_5.png" />
+    <Content Include="assets\img\tranding_item\tranding_item_6.png" />
+    <Content Include="assets\img\_clothing\carousel\063ef918-683c-4522-8023-0a0b7bce4252\1.jpg" />
+    <Content Include="assets\img\_clothing\carousel\063ef918-683c-4522-8023-0a0b7bce4252\10.jpg" />
+    <Content Include="assets\img\_clothing\carousel\063ef918-683c-4522-8023-0a0b7bce4252\11.jpg" />
+    <Content Include="assets\img\_clothing\carousel\063ef918-683c-4522-8023-0a0b7bce4252\12.jpg" />
+    <Content Include="assets\img\_clothing\carousel\063ef918-683c-4522-8023-0a0b7bce4252\13.jpg" />
+    <Content Include="assets\img\_clothing\carousel\063ef918-683c-4522-8023-0a0b7bce4252\14.jpg" />
+    <Content Include="assets\img\_clothing\carousel\063ef918-683c-4522-8023-0a0b7bce4252\15.jpg" />
+    <Content Include="assets\img\_clothing\carousel\063ef918-683c-4522-8023-0a0b7bce4252\2.jpg" />
+    <Content Include="assets\img\_clothing\carousel\063ef918-683c-4522-8023-0a0b7bce4252\3.jpg" />
+    <Content Include="assets\img\_clothing\carousel\063ef918-683c-4522-8023-0a0b7bce4252\4.jpg" />
+    <Content Include="assets\img\_clothing\carousel\063ef918-683c-4522-8023-0a0b7bce4252\5.jpg" />
+    <Content Include="assets\img\_clothing\carousel\063ef918-683c-4522-8023-0a0b7bce4252\6.jpg" />
+    <Content Include="assets\img\_clothing\carousel\063ef918-683c-4522-8023-0a0b7bce4252\7.jpg" />
+    <Content Include="assets\img\_clothing\carousel\063ef918-683c-4522-8023-0a0b7bce4252\8.jpg" />
+    <Content Include="assets\img\_clothing\carousel\063ef918-683c-4522-8023-0a0b7bce4252\9.jpg" />
+    <Content Include="assets\img\_clothing\carousel\1db01a98-4f62-49dc-8fe5-0b789a89386a\1.jpg" />
+    <Content Include="assets\img\_clothing\carousel\1db01a98-4f62-49dc-8fe5-0b789a89386a\10.jpg" />
+    <Content Include="assets\img\_clothing\carousel\1db01a98-4f62-49dc-8fe5-0b789a89386a\11.jpg" />
+    <Content Include="assets\img\_clothing\carousel\1db01a98-4f62-49dc-8fe5-0b789a89386a\12.jpg" />
+    <Content Include="assets\img\_clothing\carousel\1db01a98-4f62-49dc-8fe5-0b789a89386a\13.jpg" />
+    <Content Include="assets\img\_clothing\carousel\1db01a98-4f62-49dc-8fe5-0b789a89386a\2.jpg" />
+    <Content Include="assets\img\_clothing\carousel\1db01a98-4f62-49dc-8fe5-0b789a89386a\3.jpg" />
+    <Content Include="assets\img\_clothing\carousel\1db01a98-4f62-49dc-8fe5-0b789a89386a\4.jpg" />
+    <Content Include="assets\img\_clothing\carousel\1db01a98-4f62-49dc-8fe5-0b789a89386a\5.jpg" />
+    <Content Include="assets\img\_clothing\carousel\1db01a98-4f62-49dc-8fe5-0b789a89386a\6.jpg" />
+    <Content Include="assets\img\_clothing\carousel\1db01a98-4f62-49dc-8fe5-0b789a89386a\7.jpg" />
+    <Content Include="assets\img\_clothing\carousel\1db01a98-4f62-49dc-8fe5-0b789a89386a\8.jpg" />
+    <Content Include="assets\img\_clothing\carousel\1db01a98-4f62-49dc-8fe5-0b789a89386a\9.jpg" />
+    <Content Include="assets\img\_clothing\carousel\2017296a-2192-44b1-bec4-720b8d8793e1\1.jpg" />
+    <Content Include="assets\img\_clothing\carousel\2017296a-2192-44b1-bec4-720b8d8793e1\10.jpg" />
+    <Content Include="assets\img\_clothing\carousel\2017296a-2192-44b1-bec4-720b8d8793e1\11.jpg" />
+    <Content Include="assets\img\_clothing\carousel\2017296a-2192-44b1-bec4-720b8d8793e1\12.jpg" />
+    <Content Include="assets\img\_clothing\carousel\2017296a-2192-44b1-bec4-720b8d8793e1\2.jpg" />
+    <Content Include="assets\img\_clothing\carousel\2017296a-2192-44b1-bec4-720b8d8793e1\3.jpg" />
+    <Content Include="assets\img\_clothing\carousel\2017296a-2192-44b1-bec4-720b8d8793e1\4.jpg" />
+    <Content Include="assets\img\_clothing\carousel\2017296a-2192-44b1-bec4-720b8d8793e1\5.jpg" />
+    <Content Include="assets\img\_clothing\carousel\2017296a-2192-44b1-bec4-720b8d8793e1\6.jpg" />
+    <Content Include="assets\img\_clothing\carousel\2017296a-2192-44b1-bec4-720b8d8793e1\7.jpg" />
+    <Content Include="assets\img\_clothing\carousel\2017296a-2192-44b1-bec4-720b8d8793e1\8.jpg" />
+    <Content Include="assets\img\_clothing\carousel\2017296a-2192-44b1-bec4-720b8d8793e1\9.jpg" />
+    <Content Include="assets\img\_clothing\carousel\229d06f9-10eb-42a6-b482-597f800a5d08\1.jpg" />
+    <Content Include="assets\img\_clothing\carousel\229d06f9-10eb-42a6-b482-597f800a5d08\10.jpg" />
+    <Content Include="assets\img\_clothing\carousel\229d06f9-10eb-42a6-b482-597f800a5d08\11.jpg" />
+    <Content Include="assets\img\_clothing\carousel\229d06f9-10eb-42a6-b482-597f800a5d08\2.jpg" />
+    <Content Include="assets\img\_clothing\carousel\229d06f9-10eb-42a6-b482-597f800a5d08\3.jpg" />
+    <Content Include="assets\img\_clothing\carousel\229d06f9-10eb-42a6-b482-597f800a5d08\4.jpg" />
+    <Content Include="assets\img\_clothing\carousel\229d06f9-10eb-42a6-b482-597f800a5d08\5.jpg" />
+    <Content Include="assets\img\_clothing\carousel\229d06f9-10eb-42a6-b482-597f800a5d08\6.jpg" />
+    <Content Include="assets\img\_clothing\carousel\229d06f9-10eb-42a6-b482-597f800a5d08\7.jpg" />
+    <Content Include="assets\img\_clothing\carousel\229d06f9-10eb-42a6-b482-597f800a5d08\8.jpg" />
+    <Content Include="assets\img\_clothing\carousel\229d06f9-10eb-42a6-b482-597f800a5d08\9.jpg" />
+    <Content Include="assets\img\_clothing\carousel\2b1a7cba-b9ca-494d-83f9-29964352ce03\1.jpg" />
+    <Content Include="assets\img\_clothing\carousel\2b1a7cba-b9ca-494d-83f9-29964352ce03\2.jpg" />
+    <Content Include="assets\img\_clothing\carousel\2b1a7cba-b9ca-494d-83f9-29964352ce03\3.jpg" />
+    <Content Include="assets\img\_clothing\carousel\2b1a7cba-b9ca-494d-83f9-29964352ce03\4.jpg" />
+    <Content Include="assets\img\_clothing\carousel\2b1a7cba-b9ca-494d-83f9-29964352ce03\5.jpg" />
+    <Content Include="assets\img\_clothing\carousel\2b1a7cba-b9ca-494d-83f9-29964352ce03\6.jpg" />
+    <Content Include="assets\img\_clothing\carousel\2b1a7cba-b9ca-494d-83f9-29964352ce03\7.jpg" />
+    <Content Include="assets\img\_clothing\carousel\2b1a7cba-b9ca-494d-83f9-29964352ce03\8.jpg" />
+    <Content Include="assets\img\_clothing\carousel\2b1a7cba-b9ca-494d-83f9-29964352ce03\9.jpg" />
+    <Content Include="assets\img\_clothing\carousel\310fc580-84e8-46c9-adfa-2b53231ddb4f\1.jpg" />
+    <Content Include="assets\img\_clothing\carousel\310fc580-84e8-46c9-adfa-2b53231ddb4f\10.jpg" />
+    <Content Include="assets\img\_clothing\carousel\310fc580-84e8-46c9-adfa-2b53231ddb4f\11.jpg" />
+    <Content Include="assets\img\_clothing\carousel\310fc580-84e8-46c9-adfa-2b53231ddb4f\12.jpg" />
+    <Content Include="assets\img\_clothing\carousel\310fc580-84e8-46c9-adfa-2b53231ddb4f\13.jpg" />
+    <Content Include="assets\img\_clothing\carousel\310fc580-84e8-46c9-adfa-2b53231ddb4f\14.jpg" />
+    <Content Include="assets\img\_clothing\carousel\310fc580-84e8-46c9-adfa-2b53231ddb4f\15.jpg" />
+    <Content Include="assets\img\_clothing\carousel\310fc580-84e8-46c9-adfa-2b53231ddb4f\2.jpg" />
+    <Content Include="assets\img\_clothing\carousel\310fc580-84e8-46c9-adfa-2b53231ddb4f\3.jpg" />
+    <Content Include="assets\img\_clothing\carousel\310fc580-84e8-46c9-adfa-2b53231ddb4f\4.jpg" />
+    <Content Include="assets\img\_clothing\carousel\310fc580-84e8-46c9-adfa-2b53231ddb4f\5.jpg" />
+    <Content Include="assets\img\_clothing\carousel\310fc580-84e8-46c9-adfa-2b53231ddb4f\6.jpg" />
+    <Content Include="assets\img\_clothing\carousel\310fc580-84e8-46c9-adfa-2b53231ddb4f\7.jpg" />
+    <Content Include="assets\img\_clothing\carousel\310fc580-84e8-46c9-adfa-2b53231ddb4f\8.jpg" />
+    <Content Include="assets\img\_clothing\carousel\310fc580-84e8-46c9-adfa-2b53231ddb4f\9.jpg" />
+    <Content Include="assets\img\_clothing\carousel\3e2ec79f-099f-4c78-a1cc-aea94f2b4918\1.jpg" />
+    <Content Include="assets\img\_clothing\carousel\3e2ec79f-099f-4c78-a1cc-aea94f2b4918\2.jpg" />
+    <Content Include="assets\img\_clothing\carousel\3e2ec79f-099f-4c78-a1cc-aea94f2b4918\3.jpg" />
+    <Content Include="assets\img\_clothing\carousel\3e2ec79f-099f-4c78-a1cc-aea94f2b4918\4.jpg" />
+    <Content Include="assets\img\_clothing\carousel\403f5505-b6ea-4e2e-8f1c-bf8670e07913\1.jpg" />
+    <Content Include="assets\img\_clothing\carousel\403f5505-b6ea-4e2e-8f1c-bf8670e07913\10.jpg" />
+    <Content Include="assets\img\_clothing\carousel\403f5505-b6ea-4e2e-8f1c-bf8670e07913\11.jpg" />
+    <Content Include="assets\img\_clothing\carousel\403f5505-b6ea-4e2e-8f1c-bf8670e07913\12.jpg" />
+    <Content Include="assets\img\_clothing\carousel\403f5505-b6ea-4e2e-8f1c-bf8670e07913\13.jpg" />
+    <Content Include="assets\img\_clothing\carousel\403f5505-b6ea-4e2e-8f1c-bf8670e07913\2.jpg" />
+    <Content Include="assets\img\_clothing\carousel\403f5505-b6ea-4e2e-8f1c-bf8670e07913\3.jpg" />
+    <Content Include="assets\img\_clothing\carousel\403f5505-b6ea-4e2e-8f1c-bf8670e07913\4.jpg" />
+    <Content Include="assets\img\_clothing\carousel\403f5505-b6ea-4e2e-8f1c-bf8670e07913\5.jpg" />
+    <Content Include="assets\img\_clothing\carousel\403f5505-b6ea-4e2e-8f1c-bf8670e07913\6.jpg" />
+    <Content Include="assets\img\_clothing\carousel\403f5505-b6ea-4e2e-8f1c-bf8670e07913\7.jpg" />
+    <Content Include="assets\img\_clothing\carousel\403f5505-b6ea-4e2e-8f1c-bf8670e07913\8.jpg" />
+    <Content Include="assets\img\_clothing\carousel\403f5505-b6ea-4e2e-8f1c-bf8670e07913\9.jpg" />
+    <Content Include="assets\img\_clothing\carousel\568f2025-05d3-4bbc-982f-c9f8c7c9439d\1.jpg" />
+    <Content Include="assets\img\_clothing\carousel\568f2025-05d3-4bbc-982f-c9f8c7c9439d\2.jpg" />
+    <Content Include="assets\img\_clothing\carousel\568f2025-05d3-4bbc-982f-c9f8c7c9439d\3.jpg" />
+    <Content Include="assets\img\_clothing\carousel\568f2025-05d3-4bbc-982f-c9f8c7c9439d\4.jpg" />
+    <Content Include="assets\img\_clothing\carousel\568f2025-05d3-4bbc-982f-c9f8c7c9439d\5.jpg" />
+    <Content Include="assets\img\_clothing\carousel\568f2025-05d3-4bbc-982f-c9f8c7c9439d\6.jpg" />
+    <Content Include="assets\img\_clothing\carousel\568f2025-05d3-4bbc-982f-c9f8c7c9439d\7.jpg" />
+    <Content Include="assets\img\_clothing\carousel\5ad14c5c-11a2-4308-95b2-4584ff016a43\1.jpg" />
+    <Content Include="assets\img\_clothing\carousel\5ad14c5c-11a2-4308-95b2-4584ff016a43\10.jpg" />
+    <Content Include="assets\img\_clothing\carousel\5ad14c5c-11a2-4308-95b2-4584ff016a43\11.jpg" />
+    <Content Include="assets\img\_clothing\carousel\5ad14c5c-11a2-4308-95b2-4584ff016a43\12.jpg" />
+    <Content Include="assets\img\_clothing\carousel\5ad14c5c-11a2-4308-95b2-4584ff016a43\13.jpg" />
+    <Content Include="assets\img\_clothing\carousel\5ad14c5c-11a2-4308-95b2-4584ff016a43\2.jpg" />
+    <Content Include="assets\img\_clothing\carousel\5ad14c5c-11a2-4308-95b2-4584ff016a43\3.jpg" />
+    <Content Include="assets\img\_clothing\carousel\5ad14c5c-11a2-4308-95b2-4584ff016a43\4.jpg" />
+    <Content Include="assets\img\_clothing\carousel\5ad14c5c-11a2-4308-95b2-4584ff016a43\5.jpg" />
+    <Content Include="assets\img\_clothing\carousel\5ad14c5c-11a2-4308-95b2-4584ff016a43\6.jpg" />
+    <Content Include="assets\img\_clothing\carousel\5ad14c5c-11a2-4308-95b2-4584ff016a43\7.jpg" />
+    <Content Include="assets\img\_clothing\carousel\5ad14c5c-11a2-4308-95b2-4584ff016a43\8.jpg" />
+    <Content Include="assets\img\_clothing\carousel\5ad14c5c-11a2-4308-95b2-4584ff016a43\9.jpg" />
+    <Content Include="assets\img\_clothing\carousel\62eef2ca-a811-48ab-baec-23d13905cf64\1.jpg" />
+    <Content Include="assets\img\_clothing\carousel\62eef2ca-a811-48ab-baec-23d13905cf64\10.jpg" />
+    <Content Include="assets\img\_clothing\carousel\62eef2ca-a811-48ab-baec-23d13905cf64\11.jpg" />
+    <Content Include="assets\img\_clothing\carousel\62eef2ca-a811-48ab-baec-23d13905cf64\12.jpg" />
+    <Content Include="assets\img\_clothing\carousel\62eef2ca-a811-48ab-baec-23d13905cf64\13.jpg" />
+    <Content Include="assets\img\_clothing\carousel\62eef2ca-a811-48ab-baec-23d13905cf64\14.jpg" />
+    <Content Include="assets\img\_clothing\carousel\62eef2ca-a811-48ab-baec-23d13905cf64\15.jpg" />
+    <Content Include="assets\img\_clothing\carousel\62eef2ca-a811-48ab-baec-23d13905cf64\16.jpg" />
+    <Content Include="assets\img\_clothing\carousel\62eef2ca-a811-48ab-baec-23d13905cf64\17.jpg" />
+    <Content Include="assets\img\_clothing\carousel\62eef2ca-a811-48ab-baec-23d13905cf64\2.jpg" />
+    <Content Include="assets\img\_clothing\carousel\62eef2ca-a811-48ab-baec-23d13905cf64\3.jpg" />
+    <Content Include="assets\img\_clothing\carousel\62eef2ca-a811-48ab-baec-23d13905cf64\4.jpg" />
+    <Content Include="assets\img\_clothing\carousel\62eef2ca-a811-48ab-baec-23d13905cf64\5.jpg" />
+    <Content Include="assets\img\_clothing\carousel\62eef2ca-a811-48ab-baec-23d13905cf64\6.jpg" />
+    <Content Include="assets\img\_clothing\carousel\62eef2ca-a811-48ab-baec-23d13905cf64\7.jpg" />
+    <Content Include="assets\img\_clothing\carousel\62eef2ca-a811-48ab-baec-23d13905cf64\8.jpg" />
+    <Content Include="assets\img\_clothing\carousel\62eef2ca-a811-48ab-baec-23d13905cf64\9.jpg" />
+    <Content Include="assets\img\_clothing\carousel\658e959f-4c65-4770-aa35-21dd594d91bb\1.jpg" />
+    <Content Include="assets\img\_clothing\carousel\658e959f-4c65-4770-aa35-21dd594d91bb\2.jpg" />
+    <Content Include="assets\img\_clothing\carousel\658e959f-4c65-4770-aa35-21dd594d91bb\3.jpg" />
+    <Content Include="assets\img\_clothing\carousel\658e959f-4c65-4770-aa35-21dd594d91bb\4.jpg" />
+    <Content Include="assets\img\_clothing\carousel\658e959f-4c65-4770-aa35-21dd594d91bb\5.jpg" />
+    <Content Include="assets\img\_clothing\carousel\658e959f-4c65-4770-aa35-21dd594d91bb\6.jpg" />
+    <Content Include="assets\img\_clothing\carousel\658e959f-4c65-4770-aa35-21dd594d91bb\7.jpg" />
+    <Content Include="assets\img\_clothing\carousel\658e959f-4c65-4770-aa35-21dd594d91bb\8.jpg" />
+    <Content Include="assets\img\_clothing\carousel\68594879-d646-49c1-bf1f-34eb70fd59c5\1.jpg" />
+    <Content Include="assets\img\_clothing\carousel\68594879-d646-49c1-bf1f-34eb70fd59c5\10.jpg" />
+    <Content Include="assets\img\_clothing\carousel\68594879-d646-49c1-bf1f-34eb70fd59c5\11.jpg" />
+    <Content Include="assets\img\_clothing\carousel\68594879-d646-49c1-bf1f-34eb70fd59c5\12.jpg" />
+    <Content Include="assets\img\_clothing\carousel\68594879-d646-49c1-bf1f-34eb70fd59c5\2.jpg" />
+    <Content Include="assets\img\_clothing\carousel\68594879-d646-49c1-bf1f-34eb70fd59c5\3.jpg" />
+    <Content Include="assets\img\_clothing\carousel\68594879-d646-49c1-bf1f-34eb70fd59c5\4.jpg" />
+    <Content Include="assets\img\_clothing\carousel\68594879-d646-49c1-bf1f-34eb70fd59c5\5.jpg" />
+    <Content Include="assets\img\_clothing\carousel\68594879-d646-49c1-bf1f-34eb70fd59c5\6.jpg" />
+    <Content Include="assets\img\_clothing\carousel\68594879-d646-49c1-bf1f-34eb70fd59c5\7.jpg" />
+    <Content Include="assets\img\_clothing\carousel\68594879-d646-49c1-bf1f-34eb70fd59c5\8.jpg" />
+    <Content Include="assets\img\_clothing\carousel\68594879-d646-49c1-bf1f-34eb70fd59c5\9.jpg" />
+    <Content Include="assets\img\_clothing\carousel\6c169935-a5ca-4517-9ce1-e2a946ac5be1\1.jpg" />
+    <Content Include="assets\img\_clothing\carousel\6c169935-a5ca-4517-9ce1-e2a946ac5be1\10.jpg" />
+    <Content Include="assets\img\_clothing\carousel\6c169935-a5ca-4517-9ce1-e2a946ac5be1\2.jpg" />
+    <Content Include="assets\img\_clothing\carousel\6c169935-a5ca-4517-9ce1-e2a946ac5be1\3.jpg" />
+    <Content Include="assets\img\_clothing\carousel\6c169935-a5ca-4517-9ce1-e2a946ac5be1\4.jpg" />
+    <Content Include="assets\img\_clothing\carousel\6c169935-a5ca-4517-9ce1-e2a946ac5be1\5.jpg" />
+    <Content Include="assets\img\_clothing\carousel\6c169935-a5ca-4517-9ce1-e2a946ac5be1\6.jpg" />
+    <Content Include="assets\img\_clothing\carousel\6c169935-a5ca-4517-9ce1-e2a946ac5be1\7.jpg" />
+    <Content Include="assets\img\_clothing\carousel\6c169935-a5ca-4517-9ce1-e2a946ac5be1\8.jpg" />
+    <Content Include="assets\img\_clothing\carousel\6c169935-a5ca-4517-9ce1-e2a946ac5be1\9.jpg" />
+    <Content Include="assets\img\_clothing\carousel\728d0469-9c1f-4fb0-b4ba-1857ac2a2409\1.jpg" />
+    <Content Include="assets\img\_clothing\carousel\728d0469-9c1f-4fb0-b4ba-1857ac2a2409\10.jpg" />
+    <Content Include="assets\img\_clothing\carousel\728d0469-9c1f-4fb0-b4ba-1857ac2a2409\11.jpg" />
+    <Content Include="assets\img\_clothing\carousel\728d0469-9c1f-4fb0-b4ba-1857ac2a2409\12.jpg" />
+    <Content Include="assets\img\_clothing\carousel\728d0469-9c1f-4fb0-b4ba-1857ac2a2409\13.jpg" />
+    <Content Include="assets\img\_clothing\carousel\728d0469-9c1f-4fb0-b4ba-1857ac2a2409\14.jpg" />
+    <Content Include="assets\img\_clothing\carousel\728d0469-9c1f-4fb0-b4ba-1857ac2a2409\15.jpg" />
+    <Content Include="assets\img\_clothing\carousel\728d0469-9c1f-4fb0-b4ba-1857ac2a2409\16.jpg" />
+    <Content Include="assets\img\_clothing\carousel\728d0469-9c1f-4fb0-b4ba-1857ac2a2409\17.jpg" />
+    <Content Include="assets\img\_clothing\carousel\728d0469-9c1f-4fb0-b4ba-1857ac2a2409\18.jpg" />
+    <Content Include="assets\img\_clothing\carousel\728d0469-9c1f-4fb0-b4ba-1857ac2a2409\19.jpg" />
+    <Content Include="assets\img\_clothing\carousel\728d0469-9c1f-4fb0-b4ba-1857ac2a2409\2.jpg" />
+    <Content Include="assets\img\_clothing\carousel\728d0469-9c1f-4fb0-b4ba-1857ac2a2409\3.jpg" />
+    <Content Include="assets\img\_clothing\carousel\728d0469-9c1f-4fb0-b4ba-1857ac2a2409\4.jpg" />
+    <Content Include="assets\img\_clothing\carousel\728d0469-9c1f-4fb0-b4ba-1857ac2a2409\6.jpg" />
+    <Content Include="assets\img\_clothing\carousel\728d0469-9c1f-4fb0-b4ba-1857ac2a2409\7.jpg" />
+    <Content Include="assets\img\_clothing\carousel\728d0469-9c1f-4fb0-b4ba-1857ac2a2409\8.jpg" />
+    <Content Include="assets\img\_clothing\carousel\728d0469-9c1f-4fb0-b4ba-1857ac2a2409\9.jpg" />
+    <Content Include="assets\img\_clothing\carousel\728d0469-9c1f-4fb0-b4ba-1857ac2a2409\goods_448430_sub9.jpg" />
+    <Content Include="assets\img\_clothing\carousel\7632cb07-9ef0-459d-b3fd-5b184fc0e482\1.jpg" />
+    <Content Include="assets\img\_clothing\carousel\7632cb07-9ef0-459d-b3fd-5b184fc0e482\10.jpg" />
+    <Content Include="assets\img\_clothing\carousel\7632cb07-9ef0-459d-b3fd-5b184fc0e482\2.jpg" />
+    <Content Include="assets\img\_clothing\carousel\7632cb07-9ef0-459d-b3fd-5b184fc0e482\3.jpg" />
+    <Content Include="assets\img\_clothing\carousel\7632cb07-9ef0-459d-b3fd-5b184fc0e482\4.jpg" />
+    <Content Include="assets\img\_clothing\carousel\7632cb07-9ef0-459d-b3fd-5b184fc0e482\5.jpg" />
+    <Content Include="assets\img\_clothing\carousel\7632cb07-9ef0-459d-b3fd-5b184fc0e482\6.jpg" />
+    <Content Include="assets\img\_clothing\carousel\7632cb07-9ef0-459d-b3fd-5b184fc0e482\7.jpg" />
+    <Content Include="assets\img\_clothing\carousel\7632cb07-9ef0-459d-b3fd-5b184fc0e482\8.jpg" />
+    <Content Include="assets\img\_clothing\carousel\7632cb07-9ef0-459d-b3fd-5b184fc0e482\9.jpg" />
+    <Content Include="assets\img\_clothing\carousel\7c49e317-ddfe-4bf2-a2bf-ab1fd784490b\0.jpg" />
+    <Content Include="assets\img\_clothing\carousel\7c49e317-ddfe-4bf2-a2bf-ab1fd784490b\1.jpg" />
+    <Content Include="assets\img\_clothing\carousel\7c49e317-ddfe-4bf2-a2bf-ab1fd784490b\11.jpg" />
+    <Content Include="assets\img\_clothing\carousel\7c49e317-ddfe-4bf2-a2bf-ab1fd784490b\12.jpg" />
+    <Content Include="assets\img\_clothing\carousel\7c49e317-ddfe-4bf2-a2bf-ab1fd784490b\13.jpg" />
+    <Content Include="assets\img\_clothing\carousel\7c49e317-ddfe-4bf2-a2bf-ab1fd784490b\2.jpg" />
+    <Content Include="assets\img\_clothing\carousel\7c49e317-ddfe-4bf2-a2bf-ab1fd784490b\3.jpg" />
+    <Content Include="assets\img\_clothing\carousel\7c49e317-ddfe-4bf2-a2bf-ab1fd784490b\4.jpg" />
+    <Content Include="assets\img\_clothing\carousel\7c49e317-ddfe-4bf2-a2bf-ab1fd784490b\5.jpg" />
+    <Content Include="assets\img\_clothing\carousel\7c49e317-ddfe-4bf2-a2bf-ab1fd784490b\6.jpg" />
+    <Content Include="assets\img\_clothing\carousel\7c49e317-ddfe-4bf2-a2bf-ab1fd784490b\7.jpg" />
+    <Content Include="assets\img\_clothing\carousel\7c49e317-ddfe-4bf2-a2bf-ab1fd784490b\8.jpg" />
+    <Content Include="assets\img\_clothing\carousel\7c49e317-ddfe-4bf2-a2bf-ab1fd784490b\9.jpg" />
+    <Content Include="assets\img\_clothing\carousel\80039ab5-47f0-4697-874b-67589efb4efe\1.jpg" />
+    <Content Include="assets\img\_clothing\carousel\80039ab5-47f0-4697-874b-67589efb4efe\2.jpg" />
+    <Content Include="assets\img\_clothing\carousel\80039ab5-47f0-4697-874b-67589efb4efe\3.jpg" />
+    <Content Include="assets\img\_clothing\carousel\80039ab5-47f0-4697-874b-67589efb4efe\4.jpg" />
+    <Content Include="assets\img\_clothing\carousel\83da9fea-d0ad-404e-9f94-9bd905838e00\1.jpg" />
+    <Content Include="assets\img\_clothing\carousel\83da9fea-d0ad-404e-9f94-9bd905838e00\10.jpg" />
+    <Content Include="assets\img\_clothing\carousel\83da9fea-d0ad-404e-9f94-9bd905838e00\11.jpg" />
+    <Content Include="assets\img\_clothing\carousel\83da9fea-d0ad-404e-9f94-9bd905838e00\12.jpg" />
+    <Content Include="assets\img\_clothing\carousel\83da9fea-d0ad-404e-9f94-9bd905838e00\13.jpg" />
+    <Content Include="assets\img\_clothing\carousel\83da9fea-d0ad-404e-9f94-9bd905838e00\2.jpg" />
+    <Content Include="assets\img\_clothing\carousel\83da9fea-d0ad-404e-9f94-9bd905838e00\3.jpg" />
+    <Content Include="assets\img\_clothing\carousel\83da9fea-d0ad-404e-9f94-9bd905838e00\4.jpg" />
+    <Content Include="assets\img\_clothing\carousel\83da9fea-d0ad-404e-9f94-9bd905838e00\5.jpg" />
+    <Content Include="assets\img\_clothing\carousel\83da9fea-d0ad-404e-9f94-9bd905838e00\6.jpg" />
+    <Content Include="assets\img\_clothing\carousel\83da9fea-d0ad-404e-9f94-9bd905838e00\7.jpg" />
+    <Content Include="assets\img\_clothing\carousel\83da9fea-d0ad-404e-9f94-9bd905838e00\8.jpg" />
+    <Content Include="assets\img\_clothing\carousel\83da9fea-d0ad-404e-9f94-9bd905838e00\9.jpg" />
+    <Content Include="assets\img\_clothing\carousel\8c521f89-cdda-4192-8b1b-50bd97dfa9e0\1.jpg" />
+    <Content Include="assets\img\_clothing\carousel\8c521f89-cdda-4192-8b1b-50bd97dfa9e0\10.jpg" />
+    <Content Include="assets\img\_clothing\carousel\8c521f89-cdda-4192-8b1b-50bd97dfa9e0\11.jpg" />
+    <Content Include="assets\img\_clothing\carousel\8c521f89-cdda-4192-8b1b-50bd97dfa9e0\12.jpg" />
+    <Content Include="assets\img\_clothing\carousel\8c521f89-cdda-4192-8b1b-50bd97dfa9e0\2.jpg" />
+    <Content Include="assets\img\_clothing\carousel\8c521f89-cdda-4192-8b1b-50bd97dfa9e0\3.jpg" />
+    <Content Include="assets\img\_clothing\carousel\8c521f89-cdda-4192-8b1b-50bd97dfa9e0\4.jpg" />
+    <Content Include="assets\img\_clothing\carousel\8c521f89-cdda-4192-8b1b-50bd97dfa9e0\5.jpg" />
+    <Content Include="assets\img\_clothing\carousel\8c521f89-cdda-4192-8b1b-50bd97dfa9e0\6.jpg" />
+    <Content Include="assets\img\_clothing\carousel\8c521f89-cdda-4192-8b1b-50bd97dfa9e0\7.jpg" />
+    <Content Include="assets\img\_clothing\carousel\8c521f89-cdda-4192-8b1b-50bd97dfa9e0\8.jpg" />
+    <Content Include="assets\img\_clothing\carousel\8c521f89-cdda-4192-8b1b-50bd97dfa9e0\9.jpg" />
+    <Content Include="assets\img\_clothing\carousel\8e0979cd-3a1b-496b-adbb-5f715c04cc21\1.jpg" />
+    <Content Include="assets\img\_clothing\carousel\8e0979cd-3a1b-496b-adbb-5f715c04cc21\10.jpg" />
+    <Content Include="assets\img\_clothing\carousel\8e0979cd-3a1b-496b-adbb-5f715c04cc21\11.jpg" />
+    <Content Include="assets\img\_clothing\carousel\8e0979cd-3a1b-496b-adbb-5f715c04cc21\12.jpg" />
+    <Content Include="assets\img\_clothing\carousel\8e0979cd-3a1b-496b-adbb-5f715c04cc21\2.jpg" />
+    <Content Include="assets\img\_clothing\carousel\8e0979cd-3a1b-496b-adbb-5f715c04cc21\3.jpg" />
+    <Content Include="assets\img\_clothing\carousel\8e0979cd-3a1b-496b-adbb-5f715c04cc21\4.jpg" />
+    <Content Include="assets\img\_clothing\carousel\8e0979cd-3a1b-496b-adbb-5f715c04cc21\5.jpg" />
+    <Content Include="assets\img\_clothing\carousel\8e0979cd-3a1b-496b-adbb-5f715c04cc21\6.jpg" />
+    <Content Include="assets\img\_clothing\carousel\8e0979cd-3a1b-496b-adbb-5f715c04cc21\7.jpg" />
+    <Content Include="assets\img\_clothing\carousel\8e0979cd-3a1b-496b-adbb-5f715c04cc21\8.jpg" />
+    <Content Include="assets\img\_clothing\carousel\8e0979cd-3a1b-496b-adbb-5f715c04cc21\9.jpg" />
+    <Content Include="assets\img\_clothing\carousel\8f184714-d936-4680-b70e-0bdf421e3c68\1.jpg" />
+    <Content Include="assets\img\_clothing\carousel\8f184714-d936-4680-b70e-0bdf421e3c68\10.jpg" />
+    <Content Include="assets\img\_clothing\carousel\8f184714-d936-4680-b70e-0bdf421e3c68\11.jpg" />
+    <Content Include="assets\img\_clothing\carousel\8f184714-d936-4680-b70e-0bdf421e3c68\12.jpg" />
+    <Content Include="assets\img\_clothing\carousel\8f184714-d936-4680-b70e-0bdf421e3c68\13.jpg" />
+    <Content Include="assets\img\_clothing\carousel\8f184714-d936-4680-b70e-0bdf421e3c68\14.jpg" />
+    <Content Include="assets\img\_clothing\carousel\8f184714-d936-4680-b70e-0bdf421e3c68\15.jpg" />
+    <Content Include="assets\img\_clothing\carousel\8f184714-d936-4680-b70e-0bdf421e3c68\16.jpg" />
+    <Content Include="assets\img\_clothing\carousel\8f184714-d936-4680-b70e-0bdf421e3c68\2.jpg" />
+    <Content Include="assets\img\_clothing\carousel\8f184714-d936-4680-b70e-0bdf421e3c68\3.jpg" />
+    <Content Include="assets\img\_clothing\carousel\8f184714-d936-4680-b70e-0bdf421e3c68\4.jpg" />
+    <Content Include="assets\img\_clothing\carousel\8f184714-d936-4680-b70e-0bdf421e3c68\5.jpg" />
+    <Content Include="assets\img\_clothing\carousel\8f184714-d936-4680-b70e-0bdf421e3c68\6.jpg" />
+    <Content Include="assets\img\_clothing\carousel\8f184714-d936-4680-b70e-0bdf421e3c68\7.jpg" />
+    <Content Include="assets\img\_clothing\carousel\8f184714-d936-4680-b70e-0bdf421e3c68\8.jpg" />
+    <Content Include="assets\img\_clothing\carousel\8f184714-d936-4680-b70e-0bdf421e3c68\9.jpg" />
+    <Content Include="assets\img\_clothing\carousel\902332b8-0359-4a31-8822-32054c7fbde2\1.jpg" />
+    <Content Include="assets\img\_clothing\carousel\902332b8-0359-4a31-8822-32054c7fbde2\10.jpg" />
+    <Content Include="assets\img\_clothing\carousel\902332b8-0359-4a31-8822-32054c7fbde2\2.jpg" />
+    <Content Include="assets\img\_clothing\carousel\902332b8-0359-4a31-8822-32054c7fbde2\3.jpg" />
+    <Content Include="assets\img\_clothing\carousel\902332b8-0359-4a31-8822-32054c7fbde2\4.jpg" />
+    <Content Include="assets\img\_clothing\carousel\902332b8-0359-4a31-8822-32054c7fbde2\5.jpg" />
+    <Content Include="assets\img\_clothing\carousel\902332b8-0359-4a31-8822-32054c7fbde2\6.jpg" />
+    <Content Include="assets\img\_clothing\carousel\902332b8-0359-4a31-8822-32054c7fbde2\7.jpg" />
+    <Content Include="assets\img\_clothing\carousel\902332b8-0359-4a31-8822-32054c7fbde2\8.jpg" />
+    <Content Include="assets\img\_clothing\carousel\902332b8-0359-4a31-8822-32054c7fbde2\9.jpg" />
+    <Content Include="assets\img\_clothing\carousel\91cab916-919f-4fb1-89f6-c159d656eccb\1.jpg" />
+    <Content Include="assets\img\_clothing\carousel\91cab916-919f-4fb1-89f6-c159d656eccb\2.jpg" />
+    <Content Include="assets\img\_clothing\carousel\91cab916-919f-4fb1-89f6-c159d656eccb\3.jpg" />
+    <Content Include="assets\img\_clothing\carousel\91cab916-919f-4fb1-89f6-c159d656eccb\4.jpg" />
+    <Content Include="assets\img\_clothing\carousel\91cab916-919f-4fb1-89f6-c159d656eccb\5.jpg" />
+    <Content Include="assets\img\_clothing\carousel\91cab916-919f-4fb1-89f6-c159d656eccb\6.jpg" />
+    <Content Include="assets\img\_clothing\carousel\a963740a-25a9-4c8d-a806-b622a8689b01\1.jpg" />
+    <Content Include="assets\img\_clothing\carousel\a963740a-25a9-4c8d-a806-b622a8689b01\10.jpg" />
+    <Content Include="assets\img\_clothing\carousel\a963740a-25a9-4c8d-a806-b622a8689b01\11.jpg" />
+    <Content Include="assets\img\_clothing\carousel\a963740a-25a9-4c8d-a806-b622a8689b01\12.jpg" />
+    <Content Include="assets\img\_clothing\carousel\a963740a-25a9-4c8d-a806-b622a8689b01\13.jpg" />
+    <Content Include="assets\img\_clothing\carousel\a963740a-25a9-4c8d-a806-b622a8689b01\14.jpg" />
+    <Content Include="assets\img\_clothing\carousel\a963740a-25a9-4c8d-a806-b622a8689b01\15.jpg" />
+    <Content Include="assets\img\_clothing\carousel\a963740a-25a9-4c8d-a806-b622a8689b01\16.jpg" />
+    <Content Include="assets\img\_clothing\carousel\a963740a-25a9-4c8d-a806-b622a8689b01\2.jpg" />
+    <Content Include="assets\img\_clothing\carousel\a963740a-25a9-4c8d-a806-b622a8689b01\3.jpg" />
+    <Content Include="assets\img\_clothing\carousel\a963740a-25a9-4c8d-a806-b622a8689b01\4.jpg" />
+    <Content Include="assets\img\_clothing\carousel\a963740a-25a9-4c8d-a806-b622a8689b01\5.jpg" />
+    <Content Include="assets\img\_clothing\carousel\a963740a-25a9-4c8d-a806-b622a8689b01\6.jpg" />
+    <Content Include="assets\img\_clothing\carousel\a963740a-25a9-4c8d-a806-b622a8689b01\7.jpg" />
+    <Content Include="assets\img\_clothing\carousel\a963740a-25a9-4c8d-a806-b622a8689b01\8.jpg" />
+    <Content Include="assets\img\_clothing\carousel\a963740a-25a9-4c8d-a806-b622a8689b01\9.jpg" />
+    <Content Include="assets\img\_clothing\carousel\ac57ab56-2412-40b3-9fab-f192025c0762\1.jpg" />
+    <Content Include="assets\img\_clothing\carousel\ac57ab56-2412-40b3-9fab-f192025c0762\10.jpg" />
+    <Content Include="assets\img\_clothing\carousel\ac57ab56-2412-40b3-9fab-f192025c0762\2.jpg" />
+    <Content Include="assets\img\_clothing\carousel\ac57ab56-2412-40b3-9fab-f192025c0762\3.jpg" />
+    <Content Include="assets\img\_clothing\carousel\ac57ab56-2412-40b3-9fab-f192025c0762\4.jpg" />
+    <Content Include="assets\img\_clothing\carousel\ac57ab56-2412-40b3-9fab-f192025c0762\5.jpg" />
+    <Content Include="assets\img\_clothing\carousel\ac57ab56-2412-40b3-9fab-f192025c0762\6.jpg" />
+    <Content Include="assets\img\_clothing\carousel\ac57ab56-2412-40b3-9fab-f192025c0762\7.jpg" />
+    <Content Include="assets\img\_clothing\carousel\ac57ab56-2412-40b3-9fab-f192025c0762\8.jpg" />
+    <Content Include="assets\img\_clothing\carousel\ac57ab56-2412-40b3-9fab-f192025c0762\9.jpg" />
+    <Content Include="assets\img\_clothing\carousel\af6143bf-ce83-49a6-9746-5f24ee26585b\1.jpg" />
+    <Content Include="assets\img\_clothing\carousel\af6143bf-ce83-49a6-9746-5f24ee26585b\10.jpg" />
+    <Content Include="assets\img\_clothing\carousel\af6143bf-ce83-49a6-9746-5f24ee26585b\11.jpg" />
+    <Content Include="assets\img\_clothing\carousel\af6143bf-ce83-49a6-9746-5f24ee26585b\12.jpg" />
+    <Content Include="assets\img\_clothing\carousel\af6143bf-ce83-49a6-9746-5f24ee26585b\13.jpg" />
+    <Content Include="assets\img\_clothing\carousel\af6143bf-ce83-49a6-9746-5f24ee26585b\14.jpg" />
+    <Content Include="assets\img\_clothing\carousel\af6143bf-ce83-49a6-9746-5f24ee26585b\15.jpg" />
+    <Content Include="assets\img\_clothing\carousel\af6143bf-ce83-49a6-9746-5f24ee26585b\16.jpg" />
+    <Content Include="assets\img\_clothing\carousel\af6143bf-ce83-49a6-9746-5f24ee26585b\17.jpg" />
+    <Content Include="assets\img\_clothing\carousel\af6143bf-ce83-49a6-9746-5f24ee26585b\18.jpg" />
+    <Content Include="assets\img\_clothing\carousel\af6143bf-ce83-49a6-9746-5f24ee26585b\19.jpg" />
+    <Content Include="assets\img\_clothing\carousel\af6143bf-ce83-49a6-9746-5f24ee26585b\2.jpg" />
+    <Content Include="assets\img\_clothing\carousel\af6143bf-ce83-49a6-9746-5f24ee26585b\3.jpg" />
+    <Content Include="assets\img\_clothing\carousel\af6143bf-ce83-49a6-9746-5f24ee26585b\4.jpg" />
+    <Content Include="assets\img\_clothing\carousel\af6143bf-ce83-49a6-9746-5f24ee26585b\5.jpg" />
+    <Content Include="assets\img\_clothing\carousel\af6143bf-ce83-49a6-9746-5f24ee26585b\6.jpg" />
+    <Content Include="assets\img\_clothing\carousel\af6143bf-ce83-49a6-9746-5f24ee26585b\7.jpg" />
+    <Content Include="assets\img\_clothing\carousel\af6143bf-ce83-49a6-9746-5f24ee26585b\8.jpg" />
+    <Content Include="assets\img\_clothing\carousel\af6143bf-ce83-49a6-9746-5f24ee26585b\9.jpg" />
+    <Content Include="assets\img\_clothing\carousel\bfacf56e-97d7-4b17-a216-9e55f6c9e757\1.jpg" />
+    <Content Include="assets\img\_clothing\carousel\bfacf56e-97d7-4b17-a216-9e55f6c9e757\10.jpg" />
+    <Content Include="assets\img\_clothing\carousel\bfacf56e-97d7-4b17-a216-9e55f6c9e757\11.jpg" />
+    <Content Include="assets\img\_clothing\carousel\bfacf56e-97d7-4b17-a216-9e55f6c9e757\12.jpg" />
+    <Content Include="assets\img\_clothing\carousel\bfacf56e-97d7-4b17-a216-9e55f6c9e757\13.jpg" />
+    <Content Include="assets\img\_clothing\carousel\bfacf56e-97d7-4b17-a216-9e55f6c9e757\14.jpg" />
+    <Content Include="assets\img\_clothing\carousel\bfacf56e-97d7-4b17-a216-9e55f6c9e757\15.jpg" />
+    <Content Include="assets\img\_clothing\carousel\bfacf56e-97d7-4b17-a216-9e55f6c9e757\16.jpg" />
+    <Content Include="assets\img\_clothing\carousel\bfacf56e-97d7-4b17-a216-9e55f6c9e757\17.jpg" />
+    <Content Include="assets\img\_clothing\carousel\bfacf56e-97d7-4b17-a216-9e55f6c9e757\18.jpg" />
+    <Content Include="assets\img\_clothing\carousel\bfacf56e-97d7-4b17-a216-9e55f6c9e757\19.jpg" />
+    <Content Include="assets\img\_clothing\carousel\bfacf56e-97d7-4b17-a216-9e55f6c9e757\2.jpg" />
+    <Content Include="assets\img\_clothing\carousel\bfacf56e-97d7-4b17-a216-9e55f6c9e757\3.jpg" />
+    <Content Include="assets\img\_clothing\carousel\bfacf56e-97d7-4b17-a216-9e55f6c9e757\4.jpg" />
+    <Content Include="assets\img\_clothing\carousel\bfacf56e-97d7-4b17-a216-9e55f6c9e757\5.jpg" />
+    <Content Include="assets\img\_clothing\carousel\bfacf56e-97d7-4b17-a216-9e55f6c9e757\6.jpg" />
+    <Content Include="assets\img\_clothing\carousel\bfacf56e-97d7-4b17-a216-9e55f6c9e757\7.jpg" />
+    <Content Include="assets\img\_clothing\carousel\bfacf56e-97d7-4b17-a216-9e55f6c9e757\8.jpg" />
+    <Content Include="assets\img\_clothing\carousel\bfacf56e-97d7-4b17-a216-9e55f6c9e757\9.jpg" />
+    <Content Include="assets\img\_clothing\carousel\c350e720-a7ba-4890-b4af-b35e2ac7ffd2\1.jpg" />
+    <Content Include="assets\img\_clothing\carousel\c350e720-a7ba-4890-b4af-b35e2ac7ffd2\10.jpg" />
+    <Content Include="assets\img\_clothing\carousel\c350e720-a7ba-4890-b4af-b35e2ac7ffd2\2.jpg" />
+    <Content Include="assets\img\_clothing\carousel\c350e720-a7ba-4890-b4af-b35e2ac7ffd2\3.jpg" />
+    <Content Include="assets\img\_clothing\carousel\c350e720-a7ba-4890-b4af-b35e2ac7ffd2\4.jpg" />
+    <Content Include="assets\img\_clothing\carousel\c350e720-a7ba-4890-b4af-b35e2ac7ffd2\5.jpg" />
+    <Content Include="assets\img\_clothing\carousel\c350e720-a7ba-4890-b4af-b35e2ac7ffd2\6.jpg" />
+    <Content Include="assets\img\_clothing\carousel\c350e720-a7ba-4890-b4af-b35e2ac7ffd2\7.jpg" />
+    <Content Include="assets\img\_clothing\carousel\c350e720-a7ba-4890-b4af-b35e2ac7ffd2\8.jpg" />
+    <Content Include="assets\img\_clothing\carousel\c350e720-a7ba-4890-b4af-b35e2ac7ffd2\9.jpg" />
+    <Content Include="assets\img\_clothing\carousel\d3b73bdb-bbba-4098-87a5-1b109361996a\1.jpg" />
+    <Content Include="assets\img\_clothing\carousel\d3b73bdb-bbba-4098-87a5-1b109361996a\10.jpg" />
+    <Content Include="assets\img\_clothing\carousel\d3b73bdb-bbba-4098-87a5-1b109361996a\11.jpg" />
+    <Content Include="assets\img\_clothing\carousel\d3b73bdb-bbba-4098-87a5-1b109361996a\2.jpg" />
+    <Content Include="assets\img\_clothing\carousel\d3b73bdb-bbba-4098-87a5-1b109361996a\3.jpg" />
+    <Content Include="assets\img\_clothing\carousel\d3b73bdb-bbba-4098-87a5-1b109361996a\4.jpg" />
+    <Content Include="assets\img\_clothing\carousel\d3b73bdb-bbba-4098-87a5-1b109361996a\5.jpg" />
+    <Content Include="assets\img\_clothing\carousel\d3b73bdb-bbba-4098-87a5-1b109361996a\6.jpg" />
+    <Content Include="assets\img\_clothing\carousel\d3b73bdb-bbba-4098-87a5-1b109361996a\7.jpg" />
+    <Content Include="assets\img\_clothing\carousel\d3b73bdb-bbba-4098-87a5-1b109361996a\8.jpg" />
+    <Content Include="assets\img\_clothing\carousel\d3b73bdb-bbba-4098-87a5-1b109361996a\9.jpg" />
+    <Content Include="assets\img\_clothing\carousel\d6b392ed-5442-4e9c-b9fc-a7ed932b4d6c\1.jpg" />
+    <Content Include="assets\img\_clothing\carousel\d6b392ed-5442-4e9c-b9fc-a7ed932b4d6c\10.jpg" />
+    <Content Include="assets\img\_clothing\carousel\d6b392ed-5442-4e9c-b9fc-a7ed932b4d6c\11.jpg" />
+    <Content Include="assets\img\_clothing\carousel\d6b392ed-5442-4e9c-b9fc-a7ed932b4d6c\12.jpg" />
+    <Content Include="assets\img\_clothing\carousel\d6b392ed-5442-4e9c-b9fc-a7ed932b4d6c\2.jpg" />
+    <Content Include="assets\img\_clothing\carousel\d6b392ed-5442-4e9c-b9fc-a7ed932b4d6c\3.jpg" />
+    <Content Include="assets\img\_clothing\carousel\d6b392ed-5442-4e9c-b9fc-a7ed932b4d6c\4.jpg" />
+    <Content Include="assets\img\_clothing\carousel\d6b392ed-5442-4e9c-b9fc-a7ed932b4d6c\5.jpg" />
+    <Content Include="assets\img\_clothing\carousel\d6b392ed-5442-4e9c-b9fc-a7ed932b4d6c\6.jpg" />
+    <Content Include="assets\img\_clothing\carousel\d6b392ed-5442-4e9c-b9fc-a7ed932b4d6c\7.jpg" />
+    <Content Include="assets\img\_clothing\carousel\d6b392ed-5442-4e9c-b9fc-a7ed932b4d6c\8.jpg" />
+    <Content Include="assets\img\_clothing\carousel\d6b392ed-5442-4e9c-b9fc-a7ed932b4d6c\9.jpg" />
+    <Content Include="assets\img\_clothing\carousel\d748d5eb-4df3-4006-85ec-a5fc4fbc3549\1.jpg" />
+    <Content Include="assets\img\_clothing\carousel\d748d5eb-4df3-4006-85ec-a5fc4fbc3549\2.jpg" />
+    <Content Include="assets\img\_clothing\carousel\d748d5eb-4df3-4006-85ec-a5fc4fbc3549\3.jpg" />
+    <Content Include="assets\img\_clothing\carousel\d748d5eb-4df3-4006-85ec-a5fc4fbc3549\4.jpg" />
+    <Content Include="assets\img\_clothing\carousel\d748d5eb-4df3-4006-85ec-a5fc4fbc3549\5.jpg" />
+    <Content Include="assets\img\_clothing\carousel\d748d5eb-4df3-4006-85ec-a5fc4fbc3549\6.jpg" />
+    <Content Include="assets\img\_clothing\carousel\d748d5eb-4df3-4006-85ec-a5fc4fbc3549\7.jpg" />
+    <Content Include="assets\img\_clothing\carousel\d9caa559-8a5b-4407-930e-4a062bbc20a7\1.jpg" />
+    <Content Include="assets\img\_clothing\carousel\d9caa559-8a5b-4407-930e-4a062bbc20a7\10.jpg" />
+    <Content Include="assets\img\_clothing\carousel\d9caa559-8a5b-4407-930e-4a062bbc20a7\11.jpg" />
+    <Content Include="assets\img\_clothing\carousel\d9caa559-8a5b-4407-930e-4a062bbc20a7\12.jpg" />
+    <Content Include="assets\img\_clothing\carousel\d9caa559-8a5b-4407-930e-4a062bbc20a7\13.jpg" />
+    <Content Include="assets\img\_clothing\carousel\d9caa559-8a5b-4407-930e-4a062bbc20a7\14.jpg" />
+    <Content Include="assets\img\_clothing\carousel\d9caa559-8a5b-4407-930e-4a062bbc20a7\2.jpg" />
+    <Content Include="assets\img\_clothing\carousel\d9caa559-8a5b-4407-930e-4a062bbc20a7\3.jpg" />
+    <Content Include="assets\img\_clothing\carousel\d9caa559-8a5b-4407-930e-4a062bbc20a7\4.jpg" />
+    <Content Include="assets\img\_clothing\carousel\d9caa559-8a5b-4407-930e-4a062bbc20a7\5.jpg" />
+    <Content Include="assets\img\_clothing\carousel\d9caa559-8a5b-4407-930e-4a062bbc20a7\6.jpg" />
+    <Content Include="assets\img\_clothing\carousel\d9caa559-8a5b-4407-930e-4a062bbc20a7\7.jpg" />
+    <Content Include="assets\img\_clothing\carousel\d9caa559-8a5b-4407-930e-4a062bbc20a7\8.jpg" />
+    <Content Include="assets\img\_clothing\carousel\d9caa559-8a5b-4407-930e-4a062bbc20a7\9.jpg" />
+    <Content Include="assets\img\_clothing\carousel\dea69c0a-5c7b-4bb1-9a9f-939087af74e4\1.jpg" />
+    <Content Include="assets\img\_clothing\carousel\dea69c0a-5c7b-4bb1-9a9f-939087af74e4\2.jpg" />
+    <Content Include="assets\img\_clothing\carousel\dea69c0a-5c7b-4bb1-9a9f-939087af74e4\3.jpg" />
+    <Content Include="assets\img\_clothing\carousel\dea69c0a-5c7b-4bb1-9a9f-939087af74e4\4.jpg" />
+    <Content Include="assets\img\_clothing\carousel\dea69c0a-5c7b-4bb1-9a9f-939087af74e4\5.jpg" />
+    <Content Include="assets\img\_clothing\carousel\e901d41f-2802-404a-8a79-ec50d3eceb24\1.jpg" />
+    <Content Include="assets\img\_clothing\carousel\e901d41f-2802-404a-8a79-ec50d3eceb24\10.jpg" />
+    <Content Include="assets\img\_clothing\carousel\e901d41f-2802-404a-8a79-ec50d3eceb24\11.jpg" />
+    <Content Include="assets\img\_clothing\carousel\e901d41f-2802-404a-8a79-ec50d3eceb24\12.jpg" />
+    <Content Include="assets\img\_clothing\carousel\e901d41f-2802-404a-8a79-ec50d3eceb24\13.jpg" />
+    <Content Include="assets\img\_clothing\carousel\e901d41f-2802-404a-8a79-ec50d3eceb24\14.jpg" />
+    <Content Include="assets\img\_clothing\carousel\e901d41f-2802-404a-8a79-ec50d3eceb24\15.jpg" />
+    <Content Include="assets\img\_clothing\carousel\e901d41f-2802-404a-8a79-ec50d3eceb24\16.jpg" />
+    <Content Include="assets\img\_clothing\carousel\e901d41f-2802-404a-8a79-ec50d3eceb24\17.jpg" />
+    <Content Include="assets\img\_clothing\carousel\e901d41f-2802-404a-8a79-ec50d3eceb24\2.jpg" />
+    <Content Include="assets\img\_clothing\carousel\e901d41f-2802-404a-8a79-ec50d3eceb24\3.jpg" />
+    <Content Include="assets\img\_clothing\carousel\e901d41f-2802-404a-8a79-ec50d3eceb24\4.jpg" />
+    <Content Include="assets\img\_clothing\carousel\e901d41f-2802-404a-8a79-ec50d3eceb24\5.jpg" />
+    <Content Include="assets\img\_clothing\carousel\e901d41f-2802-404a-8a79-ec50d3eceb24\6.jpg" />
+    <Content Include="assets\img\_clothing\carousel\e901d41f-2802-404a-8a79-ec50d3eceb24\7.jpg" />
+    <Content Include="assets\img\_clothing\carousel\e901d41f-2802-404a-8a79-ec50d3eceb24\8.jpg" />
+    <Content Include="assets\img\_clothing\carousel\e901d41f-2802-404a-8a79-ec50d3eceb24\9.jpg" />
+    <Content Include="assets\img\_clothing\carousel\f5c89e06-f98a-4122-8f59-0f101559f5be\1.jpg" />
+    <Content Include="assets\img\_clothing\carousel\f5c89e06-f98a-4122-8f59-0f101559f5be\10.jpg" />
+    <Content Include="assets\img\_clothing\carousel\f5c89e06-f98a-4122-8f59-0f101559f5be\11.jpg" />
+    <Content Include="assets\img\_clothing\carousel\f5c89e06-f98a-4122-8f59-0f101559f5be\12.jpg" />
+    <Content Include="assets\img\_clothing\carousel\f5c89e06-f98a-4122-8f59-0f101559f5be\13.jpg" />
+    <Content Include="assets\img\_clothing\carousel\f5c89e06-f98a-4122-8f59-0f101559f5be\14.jpg" />
+    <Content Include="assets\img\_clothing\carousel\f5c89e06-f98a-4122-8f59-0f101559f5be\15.jpg" />
+    <Content Include="assets\img\_clothing\carousel\f5c89e06-f98a-4122-8f59-0f101559f5be\16.jpg" />
+    <Content Include="assets\img\_clothing\carousel\f5c89e06-f98a-4122-8f59-0f101559f5be\2.jpg" />
+    <Content Include="assets\img\_clothing\carousel\f5c89e06-f98a-4122-8f59-0f101559f5be\3.jpg" />
+    <Content Include="assets\img\_clothing\carousel\f5c89e06-f98a-4122-8f59-0f101559f5be\4.jpg" />
+    <Content Include="assets\img\_clothing\carousel\f5c89e06-f98a-4122-8f59-0f101559f5be\5.jpg" />
+    <Content Include="assets\img\_clothing\carousel\f5c89e06-f98a-4122-8f59-0f101559f5be\6.jpg" />
+    <Content Include="assets\img\_clothing\carousel\f5c89e06-f98a-4122-8f59-0f101559f5be\7.jpg" />
+    <Content Include="assets\img\_clothing\carousel\f5c89e06-f98a-4122-8f59-0f101559f5be\8.jpg" />
+    <Content Include="assets\img\_clothing\carousel\f5c89e06-f98a-4122-8f59-0f101559f5be\9.jpg" />
+    <Content Include="assets\img\_clothing\carousel\f8687f72-de88-43d9-8d25-8012a6bcbacd\1.jpg" />
+    <Content Include="assets\img\_clothing\carousel\f8687f72-de88-43d9-8d25-8012a6bcbacd\2.jpg" />
+    <Content Include="assets\img\_clothing\carousel\f8687f72-de88-43d9-8d25-8012a6bcbacd\3.jpg" />
+    <Content Include="assets\img\_clothing\carousel\f8687f72-de88-43d9-8d25-8012a6bcbacd\4.jpg" />
+    <Content Include="assets\img\_clothing\carousel\f8687f72-de88-43d9-8d25-8012a6bcbacd\5.jpg" />
+    <Content Include="assets\img\_clothing\carousel\f8687f72-de88-43d9-8d25-8012a6bcbacd\6.jpg" />
+    <Content Include="assets\img\_clothing\carousel\f8687f72-de88-43d9-8d25-8012a6bcbacd\7.jpg" />
+    <Content Include="assets\img\_clothing\carousel\f8687f72-de88-43d9-8d25-8012a6bcbacd\8.jpg" />
+    <Content Include="assets\img\_clothing\carousel\f8687f72-de88-43d9-8d25-8012a6bcbacd\9.jpg" />
+    <Content Include="assets\img\_clothing\carousel\fa1d10ef-46fb-4d21-a381-097649c1215c\1.jpg" />
+    <Content Include="assets\img\_clothing\carousel\fa1d10ef-46fb-4d21-a381-097649c1215c\2.jpg" />
+    <Content Include="assets\img\_clothing\carousel\fa1d10ef-46fb-4d21-a381-097649c1215c\3.jpg" />
+    <Content Include="assets\img\_clothing\carousel\fa1d10ef-46fb-4d21-a381-097649c1215c\4.jpg" />
+    <Content Include="assets\img\_clothing\carousel\fa1d10ef-46fb-4d21-a381-097649c1215c\5.jpg" />
+    <Content Include="assets\img\_clothing\carousel\fa1d10ef-46fb-4d21-a381-097649c1215c\6.jpg" />
+    <Content Include="assets\img\_clothing\carousel\fa1d10ef-46fb-4d21-a381-097649c1215c\7.jpg" />
+    <Content Include="assets\img\_clothing\carousel\fa1d10ef-46fb-4d21-a381-097649c1215c\8.jpg" />
+    <Content Include="assets\img\_clothing\carousel\fa2ee830-abfa-409f-adce-e2e8013ae48f\1.jpg" />
+    <Content Include="assets\img\_clothing\carousel\fa2ee830-abfa-409f-adce-e2e8013ae48f\10.jpg" />
+    <Content Include="assets\img\_clothing\carousel\fa2ee830-abfa-409f-adce-e2e8013ae48f\11.jpg" />
+    <Content Include="assets\img\_clothing\carousel\fa2ee830-abfa-409f-adce-e2e8013ae48f\12.jpg" />
+    <Content Include="assets\img\_clothing\carousel\fa2ee830-abfa-409f-adce-e2e8013ae48f\13.jpg" />
+    <Content Include="assets\img\_clothing\carousel\fa2ee830-abfa-409f-adce-e2e8013ae48f\14.jpg" />
+    <Content Include="assets\img\_clothing\carousel\fa2ee830-abfa-409f-adce-e2e8013ae48f\15.jpg" />
+    <Content Include="assets\img\_clothing\carousel\fa2ee830-abfa-409f-adce-e2e8013ae48f\2.jpg" />
+    <Content Include="assets\img\_clothing\carousel\fa2ee830-abfa-409f-adce-e2e8013ae48f\3.jpg" />
+    <Content Include="assets\img\_clothing\carousel\fa2ee830-abfa-409f-adce-e2e8013ae48f\4.jpg" />
+    <Content Include="assets\img\_clothing\carousel\fa2ee830-abfa-409f-adce-e2e8013ae48f\5.jpg" />
+    <Content Include="assets\img\_clothing\carousel\fa2ee830-abfa-409f-adce-e2e8013ae48f\6.jpg" />
+    <Content Include="assets\img\_clothing\carousel\fa2ee830-abfa-409f-adce-e2e8013ae48f\7.jpg" />
+    <Content Include="assets\img\_clothing\carousel\fa2ee830-abfa-409f-adce-e2e8013ae48f\8.jpg" />
+    <Content Include="assets\img\_clothing\carousel\fa2ee830-abfa-409f-adce-e2e8013ae48f\9.jpg" />
+    <Content Include="assets\img\_clothing\carousel\faf9296b-ef84-41da-b2ec-ee22e94aeb7a\0.jpg" />
+    <Content Include="assets\img\_clothing\carousel\faf9296b-ef84-41da-b2ec-ee22e94aeb7a\1.jpg" />
+    <Content Include="assets\img\_clothing\carousel\faf9296b-ef84-41da-b2ec-ee22e94aeb7a\11.jpg" />
+    <Content Include="assets\img\_clothing\carousel\faf9296b-ef84-41da-b2ec-ee22e94aeb7a\12.jpg" />
+    <Content Include="assets\img\_clothing\carousel\faf9296b-ef84-41da-b2ec-ee22e94aeb7a\13.jpg" />
+    <Content Include="assets\img\_clothing\carousel\faf9296b-ef84-41da-b2ec-ee22e94aeb7a\14.jpg" />
+    <Content Include="assets\img\_clothing\carousel\faf9296b-ef84-41da-b2ec-ee22e94aeb7a\15.jpg" />
+    <Content Include="assets\img\_clothing\carousel\faf9296b-ef84-41da-b2ec-ee22e94aeb7a\16.jpg" />
+    <Content Include="assets\img\_clothing\carousel\faf9296b-ef84-41da-b2ec-ee22e94aeb7a\17.jpg" />
+    <Content Include="assets\img\_clothing\carousel\faf9296b-ef84-41da-b2ec-ee22e94aeb7a\18.jpg" />
+    <Content Include="assets\img\_clothing\carousel\faf9296b-ef84-41da-b2ec-ee22e94aeb7a\2.jpg" />
+    <Content Include="assets\img\_clothing\carousel\faf9296b-ef84-41da-b2ec-ee22e94aeb7a\3.jpg" />
+    <Content Include="assets\img\_clothing\carousel\faf9296b-ef84-41da-b2ec-ee22e94aeb7a\4.jpg" />
+    <Content Include="assets\img\_clothing\carousel\faf9296b-ef84-41da-b2ec-ee22e94aeb7a\5.jpg" />
+    <Content Include="assets\img\_clothing\carousel\faf9296b-ef84-41da-b2ec-ee22e94aeb7a\6.jpg" />
+    <Content Include="assets\img\_clothing\carousel\faf9296b-ef84-41da-b2ec-ee22e94aeb7a\7.jpg" />
+    <Content Include="assets\img\_clothing\carousel\faf9296b-ef84-41da-b2ec-ee22e94aeb7a\8.jpg" />
+    <Content Include="assets\img\_clothing\carousel\faf9296b-ef84-41da-b2ec-ee22e94aeb7a\9.jpg" />
+    <Content Include="assets\img\_clothing\carousel\fc9466ed-81b6-416a-8447-cdd890b3e4bf\1.jpg" />
+    <Content Include="assets\img\_clothing\carousel\fc9466ed-81b6-416a-8447-cdd890b3e4bf\10.jpg" />
+    <Content Include="assets\img\_clothing\carousel\fc9466ed-81b6-416a-8447-cdd890b3e4bf\2.jpg" />
+    <Content Include="assets\img\_clothing\carousel\fc9466ed-81b6-416a-8447-cdd890b3e4bf\3.jpg" />
+    <Content Include="assets\img\_clothing\carousel\fc9466ed-81b6-416a-8447-cdd890b3e4bf\4.jpg" />
+    <Content Include="assets\img\_clothing\carousel\fc9466ed-81b6-416a-8447-cdd890b3e4bf\5.jpg" />
+    <Content Include="assets\img\_clothing\carousel\fc9466ed-81b6-416a-8447-cdd890b3e4bf\6.jpg" />
+    <Content Include="assets\img\_clothing\carousel\fc9466ed-81b6-416a-8447-cdd890b3e4bf\7.jpg" />
+    <Content Include="assets\img\_clothing\carousel\fc9466ed-81b6-416a-8447-cdd890b3e4bf\8.jpg" />
+    <Content Include="assets\img\_clothing\carousel\fc9466ed-81b6-416a-8447-cdd890b3e4bf\9.jpg" />
+    <Content Include="assets\img\_clothing\carousel\ffa1e9de-d662-4b54-bd1f-4177a4c420f7\1.jpg" />
+    <Content Include="assets\img\_clothing\carousel\ffa1e9de-d662-4b54-bd1f-4177a4c420f7\2.jpg" />
+    <Content Include="assets\img\_clothing\carousel\ffa1e9de-d662-4b54-bd1f-4177a4c420f7\3.jpg" />
+    <Content Include="assets\img\_clothing\carousel\ffa1e9de-d662-4b54-bd1f-4177a4c420f7\4.jpg" />
+    <Content Include="assets\img\_clothing\carousel\ffa1e9de-d662-4b54-bd1f-4177a4c420f7\5.jpg" />
+    <Content Include="assets\img\_clothing\carousel\ffa1e9de-d662-4b54-bd1f-4177a4c420f7\6.jpg" />
+    <Content Include="assets\img\_clothing\carousel\ffa1e9de-d662-4b54-bd1f-4177a4c420f7\7.jpg" />
+    <Content Include="assets\img\_clothing\carousel\ffa1e9de-d662-4b54-bd1f-4177a4c420f7\8.jpg" />
+    <Content Include="assets\img\_clothing\links.txt" />
+    <Content Include="assets\img\_social_login\fbbutton.png" />
+    <Content Include="assets\img\_social_login\googlebtn.png" />
+    <Content Include="assets\js\animated.headline.js" />
+    <Content Include="assets\js\aos.js" />
+    <Content Include="assets\js\bootstrap.min.js" />
+    <Content Include="assets\js\cells-by-column.js" />
+    <Content Include="assets\js\contact.js" />
+    <Content Include="assets\js\gmaps.min.js" />
+    <Content Include="assets\js\jquery-1.12.1.min.js" />
+    <Content Include="assets\js\jquery.ajaxchimp.min.js" />
+    <Content Include="assets\js\jquery.counterup.min.js" />
+    <Content Include="assets\js\jquery.downCount.js" />
+    <Content Include="assets\js\jquery.easing.min.js" />
+    <Content Include="assets\js\jquery.form.js" />
+    <Content Include="assets\js\jquery.magnific-popup.js" />
+    <Content Include="assets\js\jquery.nice-select.min.js" />
+    <Content Include="assets\js\jquery.paroller.min.js" />
+    <Content Include="assets\js\jquery.scrollUp.min.js" />
+    <Content Include="assets\js\jquery.slicknav.min.js" />
+    <Content Include="assets\js\jquery.sticky.js" />
+    <Content Include="assets\js\jquery.validate.min.js" />
+    <Content Include="assets\js\lightslider.min.js" />
+    <Content Include="assets\js\mail-script.js" />
+    <Content Include="assets\js\main.js" />
+    <Content Include="assets\js\mixitup.min.js" />
+    <Content Include="assets\js\one-page-nav-min.js" />
+    <Content Include="assets\js\owl.carousel.min.js" />
+    <Content Include="assets\js\plugins.js" />
+    <Content Include="assets\js\popper.min.js" />
+    <Content Include="assets\js\price_rangs.js" />
+    <Content Include="assets\js\slick.min.js" />
+    <Content Include="assets\js\stellar.js" />
+    <Content Include="assets\js\swiper.jquery.js" />
+    <Content Include="assets\js\swiper.min.js" />
+    <Content Include="assets\js\swiper_custom.js" />
+    <Content Include="assets\js\theme.js" />
+    <Content Include="assets\js\vendor\jquery-1.12.4.min.js" />
+    <Content Include="assets\js\vendor\modernizr-3.5.0.min.js" />
+    <Content Include="assets\js\waypoints.min.js" />
+    <Content Include="assets\js\wow.min.js" />
+    <Content Include="assets\webfonts\fa-brands-400.svg" />
+    <Content Include="assets\webfonts\fa-regular-400.svg" />
+    <Content Include="assets\webfonts\fa-solid-900.svg" />
+    <Content Include="default.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="routes\about.aspx" />
+    <Content Include="routes\admin_charts.aspx" />
+    <Content Include="routes\admin_dashboard.aspx" />
+    <Content Include="routes\callback.aspx" />
+    <Content Include="routes\cart.aspx" />
+    <Content Include="routes\checkout.aspx" />
+    <Content Include="routes\confirmation.aspx" />
+    <Content Include="routes\contact.aspx" />
+    <Content Include="routes\error\403.html" />
+    <Content Include="routes\error\404.aspx" />
+    <Content Include="routes\error\408.html" />
+    <Content Include="routes\error\500.html" />
+    <Content Include="routes\error\error.html" />
+    <Content Include="routes\forget_password.aspx" />
+    <Content Include="routes\default.aspx" />
+    <Content Include="routes\login.aspx" />
+    <Content Include="routes\product_list_men.aspx" />
+    <Content Include="routes\product_list_women.aspx" />
+    <Content Include="routes\change_password.aspx" />
+    <Content Include="routes\register.aspx" />
+    <Content Include="routes\search.aspx" />
+    <Content Include="routes\settings.aspx" />
+    <Content Include="routes\single_product.aspx" />
+    <Content Include="routes\verify2fa.aspx" />
+    <Content Include="routes\verify_email.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AfterLogin.Master.cs">
+      <DependentUpon>AfterLogin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AfterLogin.Master.designer.cs">
+      <DependentUpon>AfterLogin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="AfterLoginAdmin.Master.cs">
+      <DependentUpon>AfterLoginAdmin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AfterLoginAdmin.Master.designer.cs">
+      <DependentUpon>AfterLoginAdmin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\Classes.cs" />
+    <Compile Include="App_Code\BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_Code\Hash.cs" />
+    <Compile Include="default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="routes\about.aspx.cs">
+      <DependentUpon>about.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="routes\about.aspx.designer.cs">
+      <DependentUpon>about.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="routes\admin_charts.aspx.cs">
+      <DependentUpon>admin_charts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="routes\admin_charts.aspx.designer.cs">
+      <DependentUpon>admin_charts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="routes\admin_dashboard.aspx.cs">
+      <DependentUpon>admin_dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="routes\admin_dashboard.aspx.designer.cs">
+      <DependentUpon>admin_dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="routes\callback.aspx.cs">
+      <DependentUpon>callback.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="routes\callback.aspx.designer.cs">
+      <DependentUpon>callback.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="routes\cart.aspx.cs">
+      <DependentUpon>cart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="routes\cart.aspx.designer.cs">
+      <DependentUpon>cart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="routes\checkout.aspx.cs">
+      <DependentUpon>checkout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="routes\checkout.aspx.designer.cs">
+      <DependentUpon>checkout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="routes\confirmation.aspx.cs">
+      <DependentUpon>confirmation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="routes\confirmation.aspx.designer.cs">
+      <DependentUpon>confirmation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="routes\contact.aspx.cs">
+      <DependentUpon>contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="routes\contact.aspx.designer.cs">
+      <DependentUpon>contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="routes\forget_password.aspx.cs">
+      <DependentUpon>forget_password.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="routes\forget_password.aspx.designer.cs">
+      <DependentUpon>forget_password.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="routes\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="routes\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BeforeLogin.Master.cs">
+      <DependentUpon>BeforeLogin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BeforeLogin.Master.designer.cs">
+      <DependentUpon>BeforeLogin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="routes\login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="routes\login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="routes\product_list_men.aspx.cs">
+      <DependentUpon>product_list_men.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="routes\product_list_men.aspx.designer.cs">
+      <DependentUpon>product_list_men.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="routes\product_list_women.aspx.cs">
+      <DependentUpon>product_list_women.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="routes\product_list_women.aspx.designer.cs">
+      <DependentUpon>product_list_women.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="routes\change_password.aspx.cs">
+      <DependentUpon>change_password.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="routes\change_password.aspx.designer.cs">
+      <DependentUpon>change_password.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="routes\register.aspx.cs">
+      <DependentUpon>register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="routes\register.aspx.designer.cs">
+      <DependentUpon>register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="routes\search.aspx.cs">
+      <DependentUpon>search.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="routes\search.aspx.designer.cs">
+      <DependentUpon>search.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="routes\settings.aspx.cs">
+      <DependentUpon>settings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="routes\settings.aspx.designer.cs">
+      <DependentUpon>settings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="routes\single_product.aspx.cs">
+      <DependentUpon>single_product.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="routes\single_product.aspx.designer.cs">
+      <DependentUpon>single_product.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="routes\verify2fa.aspx.cs">
+      <DependentUpon>verify2fa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="routes\verify2fa.aspx.designer.cs">
+      <DependentUpon>verify2fa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="routes\verify_email.aspx.cs">
+      <DependentUpon>verify_email.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="routes\verify_email.aspx.designer.cs">
+      <DependentUpon>verify_email.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BeforeLogin.Master" />
+    <Content Include="assets\css\style.map" />
+    <Content Include="assets\fonts\fa-brands-400.eot" />
+    <Content Include="assets\fonts\fa-brands-400.ttf" />
+    <Content Include="assets\fonts\fa-brands-400.woff" />
+    <Content Include="assets\fonts\fa-brands-400.woff2" />
+    <Content Include="assets\fonts\fa-regular-400.eot" />
+    <Content Include="assets\fonts\fa-regular-400.ttf" />
+    <Content Include="assets\fonts\fa-regular-400.woff" />
+    <Content Include="assets\fonts\fa-regular-400.woff2" />
+    <Content Include="assets\fonts\fa-solid-900.eot" />
+    <Content Include="assets\fonts\fa-solid-900.ttf" />
+    <Content Include="assets\fonts\fa-solid-900.woff" />
+    <Content Include="assets\fonts\fa-solid-900.woff2" />
+    <Content Include="assets\fonts\Flaticon.eot" />
+    <Content Include="assets\fonts\Flaticon.ttf" />
+    <Content Include="assets\fonts\Flaticon.woff" />
+    <Content Include="assets\fonts\Flaticon.woff2" />
+    <Content Include="assets\fonts\themify.eot" />
+    <Content Include="assets\fonts\themify.ttf" />
+    <Content Include="assets\fonts\themify.woff" />
+    <Content Include="assets\img\elements\_DS_Store" />
+    <Content Include="assets\scss\style.scss" />
+    <Content Include="assets\scss\_about_us.scss" />
+    <Content Include="assets\scss\_banner.scss" />
+    <Content Include="assets\scss\_best-product.scss" />
+    <Content Include="assets\scss\_best_seller.scss" />
+    <Content Include="assets\scss\_blog.scss" />
+    <Content Include="assets\scss\_blog_page.scss" />
+    <Content Include="assets\scss\_blog_part.scss" />
+    <Content Include="assets\scss\_bradcam.scss" />
+    <Content Include="assets\scss\_breadcrumb.scss" />
+    <Content Include="assets\scss\_button.scss" />
+    <Content Include="assets\scss\_category.scss" />
+    <Content Include="assets\scss\_client_logo.scss" />
+    <Content Include="assets\scss\_client_review.scss" />
+    <Content Include="assets\scss\_color.scss" />
+    <Content Include="assets\scss\_common.scss" />
+    <Content Include="assets\scss\_confirmation_part.scss" />
+    <Content Include="assets\scss\_contact.scss" />
+    <Content Include="assets\scss\_copyright_part.scss" />
+    <Content Include="assets\scss\_cource_details.scss" />
+    <Content Include="assets\scss\_cta_part.scss" />
+    <Content Include="assets\scss\_elements.scss" />
+    <Content Include="assets\scss\_extend.scss" />
+    <Content Include="assets\scss\_feature_part.scss" />
+    <Content Include="assets\scss\_footer.scss" />
+    <Content Include="assets\scss\_h1-hero.scss" />
+    <Content Include="assets\scss\_headerMenu.scss" />
+    <Content Include="assets\scss\_instagram_photo.scss" />
+    <Content Include="assets\scss\_latest_products.scss" />
+    <Content Include="assets\scss\_mixins.scss" />
+    <Content Include="assets\scss\_new_arrival.scss" />
+    <Content Include="assets\scss\_our_offer.scss" />
+    <Content Include="assets\scss\_overlay.scss" />
+    <Content Include="assets\scss\_product.scss" />
+    <Content Include="assets\scss\_product_list.scss" />
+    <Content Include="assets\scss\_recent.scss" />
+    <Content Include="assets\scss\_review.scss" />
+    <Content Include="assets\scss\_services.scss" />
+    <Content Include="assets\scss\_shipping_details.scss" />
+    <Content Include="assets\scss\_single_blog.scss" />
+    <Content Include="assets\scss\_single_product.scss" />
+    <Content Include="assets\scss\_special_cource.scss" />
+    <Content Include="assets\scss\_subscribe_part.scss" />
+    <Content Include="assets\scss\_team.scss" />
+    <Content Include="assets\scss\_testimonial.scss" />
+    <Content Include="assets\scss\_trending_items.scss" />
+    <Content Include="assets\scss\_variables.scss" />
+    <Content Include="assets\webfonts\fa-brands-400.eot" />
+    <Content Include="assets\webfonts\fa-brands-400.ttf" />
+    <Content Include="assets\webfonts\fa-brands-400.woff" />
+    <Content Include="assets\webfonts\fa-brands-400.woff2" />
+    <Content Include="assets\webfonts\fa-regular-400.eot" />
+    <Content Include="assets\webfonts\fa-regular-400.ttf" />
+    <Content Include="assets\webfonts\fa-regular-400.woff" />
+    <Content Include="assets\webfonts\fa-regular-400.woff2" />
+    <Content Include="assets\webfonts\fa-solid-900.eot" />
+    <Content Include="assets\webfonts\fa-solid-900.ttf" />
+    <Content Include="assets\webfonts\fa-solid-900.woff" />
+    <Content Include="assets\webfonts\fa-solid-900.woff2" />
+    <Content Include="apikeys.json" />
+    <Content Include="AfterLogin.Master" />
+    <Content Include="AfterLoginAdmin.Master" />
+    <None Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="assets\img\_product_list\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>62828</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:62828/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets" Condition="Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
