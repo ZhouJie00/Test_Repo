@@ -67,6 +67,7 @@
                                                 <li><a href="/admincharts">View Charts</a></li>
                                                 <li><a href="/admindashboard">Manage Clothes</a></li>
                                                 <li><a href="/history">Purchase History</a></li>
+                                                <li><a href="/adminusers">View Users</a></li>
                                                 <li><a href="/settings">My Account</a></li>
                                                 <!--
                                                 <li><a href="product_list.html">Wish List</a></li>

@@ -32,6 +32,7 @@ namespace AWAD_Assignment {
             routes.MapPageRoute("AdminCharts", "admincharts", "~/routes/admin_charts.aspx");
             routes.MapPageRoute("Verify2FA", "verify2fa", "~/routes/verify2fa.aspx");
             routes.MapPageRoute("PurchaseHistory", "history", "~/routes/purchase_history.aspx");
+            routes.MapPageRoute("AdminUsers", "adminusers", "~/routes/admin_users.aspx");
 
 
             // Error routes

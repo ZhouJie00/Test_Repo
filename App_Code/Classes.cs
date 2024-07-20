@@ -1022,4 +1022,60 @@ public class Function {
             return dt;
         }
     }
+
+    public static GridView GetAllUsers(GridView gridView)
+    {
+        DataTable dt = new DataTable();
+        using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Database"].ConnectionString))
+        {
+            using (SqlCommand command = new SqlCommand("select * from Accounts", connection))
+            {
+                connection.Open();
+
+                using (SqlDataAdapter sql = new SqlDataAdapter())
+                {
+                    sql.SelectCommand = command;
+
+                    sql.Fill(dt);
+                }
+                if (dt.Rows.Count > 0)
+                {
+                    gridView.DataSource = dt;
+                    gridView.DataBind();
+                    gridView.HeaderRow.TableSection = TableRowSection.TableHeader;
+                } else
+                {
+                    dt.Rows.Add(dt.NewRow());
+                    gridView.DataSource = dt;
+                    gridView.DataBind();
+                    gridView.Rows[0].Cells.Clear();
+                    gridView.Rows[0].Cells.Add(new TableCell());
+                    gridView.Rows[0].Cells[0].ColumnSpan = dt.Columns.Count;
+                    gridView.Rows[0].Cells[0].Text = "No Users in Database";
+                    gridView.Rows[0].Cells[0].HorizontalAlign = HorizontalAlign.Center;
+                    gridView.Rows[0].Cells[0].VerticalAlign = VerticalAlign.Middle;
+                }
+            }
+        }
+        return gridView;
+    }
+    public static GridView AdminDeleteUser(GridView gridView, int rowIndex, HttpServerUtility server)
+    {
+        try
+        {
+            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Database"].ConnectionString))
+            {
+                using (SqlCommand sql = new SqlCommand("DELETE Accounts where id = @id", connection))
+                {
+                    connection.Open();
+                    string id = gridView.DataKeys[rowIndex].Value.ToString();
+                    sql.Parameters.AddWithValue("@id", id);
+                    sql.ExecuteNonQuery();
+
+                    gridView = GetAllUsers(gridView);
+                    return gridView;
+                }
+            }
+        } catch (SqlException) { return null; }
+    }
 }

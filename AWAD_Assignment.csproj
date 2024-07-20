@@ -876,6 +876,7 @@
     <Content Include="routes\about.aspx" />
     <Content Include="routes\admin_charts.aspx" />
     <Content Include="routes\admin_dashboard.aspx" />
+    <Content Include="routes\admin_users.aspx" />
     <Content Include="routes\callback.aspx" />
     <Content Include="routes\cart.aspx" />
     <Content Include="routes\checkout.aspx" />
@@ -951,6 +952,13 @@
     </Compile>
     <Compile Include="routes\admin_dashboard.aspx.designer.cs">
       <DependentUpon>admin_dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="routes\admin_users.aspx.cs">
+      <DependentUpon>admin_users.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="routes\admin_users.aspx.designer.cs">
+      <DependentUpon>admin_users.aspx</DependentUpon>
     </Compile>
     <Compile Include="routes\callback.aspx.cs">
       <DependentUpon>callback.aspx</DependentUpon>

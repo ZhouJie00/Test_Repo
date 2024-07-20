@@ -66,7 +66,7 @@ CREATE TABLE [dbo].[Sales] (
 CREATE TABLE [dbo].[Orders] (
     [Id]             CHAR (36) NOT NULL,
     [total]          MONEY     NOT NULL,
-    [date_purchased] DATE      NOT NULL,
+    [date_purchased] DATETIME  NOT NULL,
     [account_id]     CHAR (36) NOT NULL,
     PRIMARY KEY CLUSTERED ([Id] ASC),
     CONSTRAINT [FK_Order_Accounts] FOREIGN KEY ([account_id]) REFERENCES [dbo].[Accounts] ([Id])
