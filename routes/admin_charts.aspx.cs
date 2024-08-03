@@ -20,8 +20,8 @@ namespace AWAD_Assignment.routes {
 
             // Display charts
             if (!IsPostBack) {
-                LoadCountries();
-                LoadCategories();
+                //LoadCountries();
+                //LoadCategories();
                 LoadSales();
             }
         }
