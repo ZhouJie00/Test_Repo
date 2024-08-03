@@ -20,6 +20,7 @@ using System.Net;
 using System.Net.Mail;
 using AjaxControlToolkit.HtmlEditor.ToolbarButtons;
 using OtpNet;
+using static QRCoder.PayloadGenerator;
 
 /// <summary>
 /// Summary description for Clothes
@@ -704,6 +705,30 @@ public class Function {
         return password;
         
     }
+
+    public static string IsUserAdmin(string TextBox_Email)
+    {
+        SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Database"].ConnectionString);
+        conn.Open();
+
+        string checkPasswordQuery = "SELECT isAdmin FROM Accounts WHERE email = @email2";
+
+        SqlCommand pwcomm = new SqlCommand(checkPasswordQuery, conn);
+        pwcomm.Parameters.AddWithValue("@email2", TextBox_Email);
+        string password =  pwcomm.ExecuteScalar().ToString();
+        return password;
+
+    }
+    public static void SetUserVerificationTrue(string email) {
+        SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Database"].ConnectionString);
+        conn.Open();
+        SqlCommand cmd = new SqlCommand("update accounts set emailconfirmed = @verified where email = @email", conn);
+        cmd.Parameters.AddWithValue("@email", email);
+        cmd.Parameters.AddWithValue("@verified", true);
+        cmd.ExecuteNonQuery();
+        conn.Close();
+    }
+
     public static DataSet GetMenTops() {
         using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Database"].ConnectionString))
         {
@@ -815,6 +840,7 @@ public class Function {
         command.Parameters.AddWithValue("@email", email);
         command.Parameters.AddWithValue("@pw", password);
         command.ExecuteNonQuery();
+        conn.Close();
     }
 
     public static bool UserAlreadyCreatedReview(string product_id, dynamic email)
@@ -960,7 +986,7 @@ public class Function {
         
         
         MailMessage mail = new MailMessage();
-        mail.From = new MailAddress(my_email, "PP Slayer");
+        mail.From = new MailAddress(my_email, "TrendyTrees@gmail.com");
         mail.To.Add(new MailAddress(email));
 
         mail.Subject = subject;
@@ -1077,5 +1103,19 @@ public class Function {
                 }
             }
         } catch (SqlException) { return null; }
+    }
+    public static void RemoveUserVoid(String email)
+    {
+ 
+            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Database"].ConnectionString))
+            {
+                using (SqlCommand sql = new SqlCommand("DELETE Accounts where email = @id", connection))
+                {
+                    connection.Open();
+                    sql.Parameters.AddWithValue("@id", email);
+                    sql.ExecuteNonQuery();
+                }
+            }
+        
     }
 }

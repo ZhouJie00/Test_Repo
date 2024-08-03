@@ -67,7 +67,7 @@
                                 <br />
                                 <asp:RegularExpressionValidator runat="server" ID="RegularExpressionValidator_FirstName" ForeColor="Red" ControlToValidate="TextBox_FirstName" ValidationExpression="^([a-zA-Z' ]+)$" ErrorMessage="Real names only have letters"></asp:RegularExpressionValidator>
 
-                                <div class="col-md-6 form-group p_star">
+                                <div class="">
                                     <!-- <input type="text" class="form-control" id="last" name="name" /> -->
                                     <!-- <span class="placeholder" data-placeholder="Last name"></span> -->
                                     <asp:TextBox ID="TextBox_MobileNumber" TabIndex="3" TextMode="Phone" CssClass="form-control" Placeholder="Mobile Number" runat="server"></asp:TextBox>

@@ -89,7 +89,7 @@
                                     <asp:TextBox ID="TextBox_Password" TextMode="Password" CssClass="form-control" Placeholder="Password" runat="server"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator_Password" runat="server" ForeColor="Red" ErrorMessage="Required Field" Text="Required Field" ControlToValidate="TextBox_Password"></asp:RequiredFieldValidator>
                                     <br />
-                                    <asp:RegularExpressionValidator runat="server" ID="RegularExpressionValidator_Password" ForeColor="Red" ErrorMessage="It is not a strong password, try another one" ControlToValidate="TextBox_Password" ValidationExpression="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$"></asp:RegularExpressionValidator>
+                                    <asp:RegularExpressionValidator runat="server" ID="RegularExpressionValidator_Password" ForeColor="Red" ErrorMessage="It must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, and one digit." ControlToValidate="TextBox_Password" ValidationExpression="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$"></asp:RegularExpressionValidator>
                                 </div>
 
                                 <div class="col-md-12 form-group p_star">
@@ -97,7 +97,7 @@
                                     <asp:TextBox ID="TextBox_ConfirmPassword" TextMode="Password" CssClass="form-control" Placeholder="Confirm Password" runat="server"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator_ConfirmPassword" runat="server" ForeColor="Red" ErrorMessage="Required Field" Text="Required Field" ControlToValidate="TextBox_ConfirmPassword"></asp:RequiredFieldValidator>
                                     <br />
-                                    <asp:RegularExpressionValidator runat="server" ID="RegularExpressionValidator_ConfirmPassword" ForeColor="Red" ErrorMessage="It is not a strong password, try another one" ControlToValidate="TextBox_ConfirmPassword" ValidationExpression="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$"></asp:RegularExpressionValidator>
+                                    <asp:RegularExpressionValidator runat="server" ID="RegularExpressionValidator_ConfirmPassword" ForeColor="Red" ErrorMessage="It must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, and one digit." ControlToValidate="TextBox_ConfirmPassword" ValidationExpression="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$"></asp:RegularExpressionValidator>
                                 </div>
                                 <asp:CompareValidator ID="CompareValidator_Password" runat="server"
                                     ControlToCompare="TextBox_Password"

@@ -27,29 +27,18 @@ namespace AWAD_Assignment.routes {
             }
 
             // Check if Decrypted Token Email exists in DB
-            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Database"].ConnectionString);
-
-            conn.Open();
-
-            string checkuser = "SELECT COUNT(*) FROM Accounts WHERE Email = @email";
-            SqlCommand com = new SqlCommand(checkuser, conn);
             string email = Encoding.ASCII.GetString(Convert.FromBase64String(decryptedToken)).Substring(8);
-            com.Parameters.AddWithValue("@email", email);
+            int temp = Function.CheckIfUserExists(email); // Convert.ToInt32(com.ExecuteScalar().ToString());
 
-            int temp = Convert.ToInt32(com.ExecuteScalar().ToString());
 
             if (temp == 1) { // if email exists inside DB it is a valid
                 // The user has verified their email
-                SqlCommand cmd = new SqlCommand("update accounts set emailconfirmed = @verified where email = @email", conn);
-                cmd.Parameters.AddWithValue("@email", email);
-                cmd.Parameters.AddWithValue("@verified", true);
-                cmd.ExecuteNonQuery();
+                Function.SetUserVerificationTrue(email);
             }
             else {
                 // Invalid token, redirect to 404
                 Response.Redirect(ResolveClientUrl("../404"));
             }
-            conn.Close();
         }
     }
 }

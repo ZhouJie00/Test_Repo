@@ -7,10 +7,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AWAD_Assignment.routes {
+namespace AWAD_Assignment.routes
+{
 
 
-    public partial class single_product {
+    public partial class single_product
+    {
 
         /// <summary>
         /// RepeaterImages control.
@@ -49,6 +51,15 @@ namespace AWAD_Assignment.routes {
         protected global::System.Web.UI.WebControls.Label Label_Clothes_price;
 
         /// <summary>
+        /// Label_Clothes_overview control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label_Clothes_overview;
+
+        /// <summary>
         /// ListBox_Size control.
         /// </summary>
         /// <remarks>
@@ -85,6 +96,15 @@ namespace AWAD_Assignment.routes {
         protected global::System.Web.UI.WebControls.Button Button_AddToCart;
 
         /// <summary>
+        /// Label_ReviewCount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label_ReviewCount;
+
+        /// <summary>
         /// ScriptManager1 control.
         /// </summary>
         /// <remarks>
@@ -119,24 +139,6 @@ namespace AWAD_Assignment.routes {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button_SubmitReview;
-
-        /// <summary>
-        /// Label_ReviewCount control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label_ReviewCount;
-
-        /// <summary>
-        /// Label_Clothes_overview control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label_Clothes_overview;
 
         /// <summary>
         /// RepeaterReview control.

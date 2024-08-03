@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31624.102
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.34916.146
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWAD_Assignment", "AWAD_Assignment.csproj", "{D796802B-E627-4C49-88E5-7F83AF194E3B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject1", "..\UnitTestProject1\UnitTestProject1.csproj", "{A9C4754D-42DB-44E1-B4E9-BDA359AA2F25}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{D796802B-E627-4C49-88E5-7F83AF194E3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D796802B-E627-4C49-88E5-7F83AF194E3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D796802B-E627-4C49-88E5-7F83AF194E3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9C4754D-42DB-44E1-B4E9-BDA359AA2F25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9C4754D-42DB-44E1-B4E9-BDA359AA2F25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9C4754D-42DB-44E1-B4E9-BDA359AA2F25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9C4754D-42DB-44E1-B4E9-BDA359AA2F25}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
