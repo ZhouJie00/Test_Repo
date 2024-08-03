@@ -10,8 +10,6 @@ using System.Data.SqlClient;
 using System.Configuration;
 using System.Threading;
 using System.Security.Cryptography;
-using SendGrid;
-using SendGrid.Helpers.Mail;
 using System.Threading.Tasks;
 using System.Diagnostics;
 using System.IO;
@@ -48,27 +46,6 @@ namespace AWAD_Assignment.routes {
             Label_Status.Text = "A password reset request has been sent if the email exists";
         }
         private void SendEmail(string email, string name="Customer") {
-
-            SecretKeys api_keys = null; // https://www.delftstack.com/howto/csharp/read-json-file-in-csharp/
-            using (StreamReader reader = new StreamReader(Server.MapPath("./apikeys.json"))) {
-                string jsonString = reader.ReadToEnd();
-                api_keys = JsonConvert.DeserializeObject<SecretKeys>(jsonString);
-            }
-            // Create an encrypted token for reset password
-            var encryptedToken = Function.EncryptEmailToken(Function.CreateEmailToken(Encoding.ASCII.GetBytes(email))); // Use uuid4 for token?
-
-            var client = new SendGridClient(api_keys.sendgrid_api_key); // Environment.GetEnvironmentVariable("NAME_OF_THE_ENVIRONMENT_VARIABLE_FOR_YOUR_SENDGRID_KEY");
-            var msg = new SendGridMessage();
-            msg.SetFrom(new EmailAddress(api_keys.sendgrid_email, "Support"));
-            msg.AddTo(new EmailAddress(email, name));
-            msg.SetTemplateId("d-2e7fa9b4a6c148f499d4949765b0d524");
-            var dynamicTemplateData = new ForgetPasswordTemplateData { resetlink = $"http://localhost:62828/routes/change_password.aspx?token={encryptedToken}" };
-            msg.SetTemplateData(dynamicTemplateData);
-
-            var response = client.SendEmailAsync(msg);
-            //Console.WriteLine(response.StatusCode);
-            //Console.WriteLine(response.Headers.ToString());
-            //Console.WriteLine("\n\nPress any key to exit.");
         }
         private static string EncryptEmailToken(string textToEncrypt) {
             try {

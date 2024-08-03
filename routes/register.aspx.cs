@@ -9,8 +9,6 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
 using Salt_Password_Sample;
-using SendGrid;
-using SendGrid.Helpers.Mail;
 using Newtonsoft.Json;
 using System.IO;
 using System.Text;
@@ -90,26 +88,6 @@ namespace AWAD_Assignment.routes
         }
         private void SendEmail(string email, string name = "Customer") {
 
-            SecretKeys api_keys = null; // https://www.delftstack.com/howto/csharp/read-json-file-in-csharp/
-            using (StreamReader reader = new StreamReader(Server.MapPath("./apikeys.json"))) {
-                string jsonString = reader.ReadToEnd();
-                api_keys = JsonConvert.DeserializeObject<SecretKeys>(jsonString);
-            }
-            // Create an encrypted token for verification email
-            var encryptedToken = Function.EncryptEmailToken(Function.CreateEmailToken(Encoding.ASCII.GetBytes(email))); // Use uuid4 for token?
-
-            var client = new SendGridClient(api_keys.sendgrid_api_key); // Environment.GetEnvironmentVariable("NAME_OF_THE_ENVIRONMENT_VARIABLE_FOR_YOUR_SENDGRID_KEY");
-            var msg = new SendGridMessage();
-            msg.SetFrom(new EmailAddress(api_keys.sendgrid_email, "Support"));
-            msg.AddTo(new EmailAddress(email, name));
-            msg.SetTemplateId("d-90fccdb14c4f4fdc82c77abaeb2165b7");
-            var dynamicTemplateData = new VerificationEmailTemplateData { verifylink = $"http://localhost:62828/routes/verify_email.aspx?token={encryptedToken}", name = name };
-            msg.SetTemplateData(dynamicTemplateData);
-
-            var response = client.SendEmailAsync(msg);
-            //Console.WriteLine(response.StatusCode);
-            //Console.WriteLine(response.Headers.ToString());
-            //Console.WriteLine("\n\nPress any key to exit.");
         }
     }
 }

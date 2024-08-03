@@ -211,8 +211,6 @@ public class SecretKeys {
     public string stripe_api_key { get; set; }
     public string google_public { get; set; }
     public string google_secret { get; set; }
-    public string sendgrid_api_key { get; set; }
-    public string sendgrid_email { get; set; }
     public string ipify { get; set; }
 }
 public class ForgetPasswordTemplateData {
